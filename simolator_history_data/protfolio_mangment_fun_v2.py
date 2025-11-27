@@ -1,3 +1,15 @@
+"""
+Portfolio Management and Backtesting Orchestration.
+
+This module is the central controller for the backtesting simulator. It is
+responsible for:
+- Loading historical stock data from local files.
+- Managing the main simulation loop, which iterates through each day of the
+  backtest period.
+- Spawning and managing a separate thread for each stock for each day of the
+  simulation.
+- Generating final performance reports, logs, and plots.
+"""
 import os
 import time
 
@@ -6,23 +18,33 @@ import numpy as np
 from algo_trade_ofir_function_on_stock_client_v2 import *
 import globals_v2 as glb
 
-def fill_stocks_data(stock,year_month_list,start,end):
-    stock_data = {'open':[],'close':[],'high':[],'low':[],'avg':[],'volume':[],'days': 0,'dates':[],'real_close':[]}
+def fill_stocks_data(stock, year_month_list, start, end):
+    """
+    Loads historical data for a given stock from local text files.
+
+    Args:
+        stock (str): The stock symbol.
+        year_month_list (list): A list of year-month strings to load data for.
+        start (str): The start date of the simulation.
+        end (str): The end date of the simulation.
+    """
+    stock_data = {'open': [], 'close': [], 'high': [], 'low': [], 'avg': [], 'volume': [], 'days': 0, 'dates': [],
+                  'real_close': []}
     if glb.dbg_on_real_data:
         # stock_path = f"/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result/Program_runs/30_09M_2024->01_10M_2024/day_trade/{stock}/"
-        stock_path = glb.local_path_file+f"{stock}/"
+        stock_path = glb.local_path_file + f"{stock}/"
         stock_log_price_times_path = stock_path + 'log_price_times' + stock + '.csv'
-        with open(stock_log_price_times_path ,"r") as file:
+        with open(stock_log_price_times_path, "r") as file:
             import csv
             reader = csv.reader(file)
-            counter =0
-            tags = ['dates','avg','volume']
+            counter = 0
+            tags = ['dates', 'avg', 'volume']
             for row in reader:
-                if counter==0:
+                if counter == 0:
                     stock_data[tags[counter]].append(row)
                 else:
                     stock_data[tags[counter]].append([float(val) for val in row])
-                counter+=1
+                counter += 1
         stock_data['days'] = 1
     else:
         flag_add = False
@@ -49,28 +71,43 @@ def fill_stocks_data(stock,year_month_list,start,end):
                         stock_data['volume'].append([])
                         stock_data['avg'].append([])
                         stock_data['dates'].append(date)
-                        day_num = stock_data['days']-1
-                        gap = 0 if day_num == 0 else ( (float(row_data[4]) - stock_data['close'][day_num - 1][-1]))
+                        day_num = stock_data['days'] - 1
+                        gap = 0 if day_num == 0 else (
+                                (float(row_data[4]) - stock_data['close'][day_num - 1][-1]))
                         # gap = 0
-                    stock_data['open'][day_num].append(float(row_data[1])-gap)
-                    stock_data['close'][day_num].append(float(row_data[4])-gap)
+                    stock_data['open'][day_num].append(float(row_data[1]) - gap)
+                    stock_data['close'][day_num].append(float(row_data[4]) - gap)
                     stock_data['real_close'][day_num].append(float(row_data[4]))
-                    stock_data['high'][day_num].append(float(row_data[2])-gap)
-                    stock_data['low'][day_num].append(float(row_data[3])-gap)
+                    stock_data['high'][day_num].append(float(row_data[2]) - gap)
+                    stock_data['low'][day_num].append(float(row_data[3]) - gap)
                     stock_data['volume'][day_num].append(float(row_data[5]))
                     # stock_data['avg'][day_num].append(np.round(float(row_data[4]), 3))
-                    stock_data['avg'][day_num].append(np.round((float(row_data[1]) + float(row_data[4])) / 2, 3))
+                    stock_data['avg'][day_num].append(
+                        np.round((float(row_data[1]) + float(row_data[4])) / 2, 3))
                     # stock_data['avg'][day_num].append(np.round((float(row_data[2]) + float(row_data[3])) / 2, 3))
     # print("gap:",gap)
-    glb.stocks_data.update({stock:stock_data})
+    glb.stocks_data.update({stock: stock_data})
+
 
 def fill_portfolio_dict(stocks_list):
+    """
+    Initializes the portfolio dictionaries with stock objects.
+
+    Args:
+        stocks_list (list): A list of stock symbols.
+    """
     barrier = threading.Barrier(len(stocks_list))
     glb.day_barrier = threading.Barrier(len(stocks_list))
     for stock in stocks_list:
-        glb.demo_portfolio_treads.update({stock: Demo_Stock_Object(stock, barrier, glb.my_init_demo_available_money_dollar)})
+        glb.demo_portfolio_treads.update(
+            {stock: Demo_Stock_Object(stock, barrier, glb.my_init_demo_available_money_dollar)})
+
+
 def write_to_real_log_info():
-    import  csv
+    """
+    Writes the final trading logs and performance summary to text and Excel files.
+    """
+    import csv
     import pandas as pd
     if not os.path.isdir(glb.PATH_RESULTS):
         os.mkdir(glb.PATH_RESULTS)
@@ -85,34 +122,45 @@ def write_to_real_log_info():
     real_log_path = all_results_path + '/real_log_hist.xlsx'
     for row in glb.real_logs_csv:
         glb.stock_that_been_used[row[2]].append(row)
-    writer = pd.ExcelWriter(real_log_path, engine='xlsxwriter',mode='w')
-    head_lines = ['Dates', 'min_num','stock_name','action', 'stock_price','volume', 'shears_transaction_amount', 'commission','stock_net_value' ,'cash']
-    main_sheet = [head_lines]+glb.real_logs_csv
+    writer = pd.ExcelWriter(real_log_path, engine='xlsxwriter', mode='w')
+    head_lines = ['Dates', 'min_num', 'stock_name', 'action', 'stock_price', 'volume', 'shears_transaction_amount',
+                  'commission', 'stock_net_value', 'cash']
+    main_sheet = [head_lines] + glb.real_logs_csv
     df = pd.DataFrame(main_sheet)
     df.to_excel(writer, sheet_name='Main', index=False)
     for stock in glb.stock_that_been_used:
-        glb.stock_that_been_used[stock] =[head_lines]+glb.stock_that_been_used[stock]
+        glb.stock_that_been_used[stock] = [head_lines] + glb.stock_that_been_used[stock]
         df = pd.DataFrame(glb.stock_that_been_used[stock])
-        df.to_excel(writer, sheet_name=stock,index=False)
+        df.to_excel(writer, sheet_name=stock, index=False)
     writer.close()
 
     if len(glb.demo_portfolio_treads) == 1:
         for stock in glb.demo_portfolio_treads:
-            if not os.path.isdir(glb.PATH_RESULTS+ '/' + stock):
-                os.mkdir(glb.PATH_RESULTS+ '/' + stock)
+            if not os.path.isdir(glb.PATH_RESULTS + '/' + stock):
+                os.mkdir(glb.PATH_RESULTS + '/' + stock)
             log_path = glb.PATH_RESULTS + '/' + stock + '/' + stock + '_log.xlsx'
             writer = pd.ExcelWriter(log_path, engine='xlsxwriter', mode='w')
-            head_lines = ['Dates', 'min_num', 'stock_name', 'action', 'stock_price', 'volume', 'shears_transaction_amount', 'commission', 'stock_net_value', 'cash']
+            head_lines = ['Dates', 'min_num', 'stock_name', 'action', 'stock_price', 'volume',
+                          'shears_transaction_amount', 'commission', 'stock_net_value', 'cash']
             main_sheet = [head_lines] + glb.real_logs_csv
             df = pd.DataFrame(main_sheet)
             df.to_excel(writer, sheet_name=stock, index=False)
             writer.close()
 
+
 def plotting_stocks_summary(start, end):
-    init_money = (glb.my_available_money_dollar_start-500)/len(glb.demo_portfolio_treads)
+    """
+    Generates and saves performance plots for each stock.
+
+    Args:
+        start (str): The start date of the simulation.
+        end (str): The end date of the simulation.
+    """
+    init_money = (glb.my_available_money_dollar_start - 500) / len(glb.demo_portfolio_treads)
 
     for stock_name in glb.my_portfolio:
-        glb.my_portfolio[stock_name].real_sell_shears(glb.demo_portfolio_treads[stock_name].real_avg_list[-1][-1],-1,99999999999)#max volume to sell all
+        glb.my_portfolio[stock_name].real_sell_shears(glb.demo_portfolio_treads[stock_name].real_avg_list[-1][-1], -1,
+                                                      99999999999)  # max volume to sell all
         txt = f"stock:{stock_name} init money: {init_money} in the end: {glb.my_portfolio[stock_name].available_money} P&L:{round(100 * (glb.my_portfolio[stock_name].available_money - init_money) / init_money, 2)}%"
         print(txt)
         glb.my_portfolio[stock_name].return_available_real_cash()
@@ -173,7 +221,15 @@ def plotting_stocks_summary(start, end):
 #     plotting_stocks_summary(start, end)
 #     print(glb.my_available_money_dollar_start, glb.my_available_money_dollar,100 * (glb.my_available_money_dollar - glb.my_available_money_dollar_start) / glb.my_available_money_dollar_start,'%')
 #
-def trade_and_update_portfolio_local_data(stocks_list, start,end):
+def trade_and_update_portfolio_local_data(stocks_list, start, end):
+    """
+    The main function to orchestrate the backtesting session.
+
+    Args:
+        stocks_list (list): A list of stock symbols to backtest.
+        start (str): The start date of the backtest (e.g., "2023-01-01").
+        end (str): The end date of the backtest (e.g., "2023-12-31").
+    """
     # import necessary packages
     from datetime import datetime
     from dateutil import rrule
@@ -184,34 +240,36 @@ def trade_and_update_portfolio_local_data(stocks_list, start,end):
     if glb.dbg_on_real_data:
         test_month_dates = 0
     else:
-        test_month_dates = [(str(dt.year)+'_'+str(dt.month).zfill(2)) for dt in rrule.rrule(rrule.MONTHLY, dtstart=start_date, until=end_date)]
+        test_month_dates = [(str(dt.year) + '_' + str(dt.month).zfill(2)) for dt in
+                            rrule.rrule(rrule.MONTHLY, dtstart=start_date, until=end_date)]
         if len(test_month_dates) == 0:
             raise RuntimeError(f"invalid dates start {start} end {end}")
         for stock in stocks_list:
             for date in test_month_dates:
-                year =date.split('_')[0]
-                month =date.split('_')[1]
+                year = date.split('_')[0]
+                month = date.split('_')[1]
                 file_name = f"{stock}_{year}_{month}.txt"
                 if not os.path.exists(glb.PATH_STOCKS_DATA + f"{stock}/" + file_name):
                     raise RuntimeError(f"stock data of {stock} in date of {year}-{month} not founded")
 
     for stock in stocks_list:
-        fill_stocks_data(stock,test_month_dates,start,end)
+        fill_stocks_data(stock, test_month_dates, start, end)
     fill_portfolio_dict(stocks_list)
-    if os.path.exists(glb.PATH_RESULTS+'/real_log_hist.txt'):
-        os.remove(glb.PATH_RESULTS+'/real_log_hist.txt')
-    if os.path.exists(glb.PATH_RESULTS+'/real_log_hist.xlsx'):
-        os.remove(glb.PATH_RESULTS+'/real_log_hist.xlsx')
+    if os.path.exists(glb.PATH_RESULTS + '/real_log_hist.txt'):
+        os.remove(glb.PATH_RESULTS + '/real_log_hist.txt')
+    if os.path.exists(glb.PATH_RESULTS + '/real_log_hist.xlsx'):
+        os.remove(glb.PATH_RESULTS + '/real_log_hist.xlsx')
     total_days_number = glb.stocks_data[stocks_list[0]]['days']
     if glb.dbg_on_real_data:
         glb.not_first_day = True
     for day_num in range(total_days_number):
         flag = True
         for stock_object in glb.demo_portfolio_treads:
-            if day_num == (total_days_number-1):
+            if day_num == (total_days_number - 1):
                 glb.demo_portfolio_treads[stock_object].flag_last_day = True
             # simulate_day_trading_slope_linear_regression_2(glb.demo_portfolio_treads[stock_object],test_algo_date_end,1,interval)
-            glb.demo_portfolio_treads[stock_object].thread_id = threading.Thread(target=simulate_day_trading_local_data, args=(glb.demo_portfolio_treads[stock_object],day_num))
+            glb.demo_portfolio_treads[stock_object].thread_id = threading.Thread(
+                target=simulate_day_trading_local_data, args=(glb.demo_portfolio_treads[stock_object], day_num))
             if flag:
                 glb.job_by_one_thread = stock_object
                 flag = False
@@ -222,9 +280,14 @@ def trade_and_update_portfolio_local_data(stocks_list, start,end):
     # exit_and_collect_money(-1)
     plotting_stocks_summary(start, end)
     if glb.statistic_flag:
-        pnl = round(100 * (glb.my_available_money_dollar - glb.my_available_money_dollar_start) / glb.my_available_money_dollar_start,2)
+        pnl = round(100 * (
+                    glb.my_available_money_dollar - glb.my_available_money_dollar_start) / glb.my_available_money_dollar_start,
+                    2)
         txt = f"P&L: {pnl} ,glb.limit_presantage: {glb.limit_presantage} ,glb.diff_p: {glb.diff_p} ,glb.factor:{glb.factor}"
         glb.statistic_list.append([pnl, txt])
         print(txt)
     else:
-        print(glb.my_available_money_dollar_start, glb.my_available_money_dollar, glb.my_available_money_dollar - glb.my_available_money_dollar_start, 100 * (glb.my_available_money_dollar - glb.my_available_money_dollar_start) / glb.my_available_money_dollar_start, '%')
+        print(glb.my_available_money_dollar_start, glb.my_available_money_dollar,
+              glb.my_available_money_dollar - glb.my_available_money_dollar_start, 100 * (
+                          glb.my_available_money_dollar - glb.my_available_money_dollar_start) / glb.my_available_money_dollar_start,
+              '%')

@@ -1,3 +1,17 @@
+"""
+Core Trading Logic and Simulation Engine.
+
+This module is the heart of the trading application, containing the primary
+trading algorithm, the simulation engine for backtesting, and the logic for
+dynamic capital allocation.
+
+Key components:
+- `simulate_trading_local_data`: The main simulation loop for a single stock.
+- `Safe_Limit_condition_stock_trade`: The core trading strategy, implementing a
+  trailing stop-loss/take-profit mechanism.
+- `divide_available_money`: The capital allocation strategy, which rebalances
+  the portfolio based on stock performance.
+"""
 import numpy as np
 import datetime as dt
 
@@ -17,8 +31,19 @@ from ibkr_connection import *
 key_lock_money_divide = threading.Lock()
 
 
-def extract_lists_from_local(stock, start,end,):
-    txt =''
+def extract_lists_from_local(stock, start, end):
+    """
+    Extracts historical data for a stock from local text files.
+
+    Args:
+        stock (str): The stock symbol.
+        start (str): The start date for the data extraction.
+        end (str): The end date for the data extraction.
+
+    Returns:
+        tuple: A tuple containing lists of average prices, open prices, close prices, and volumes.
+    """
+    txt = ''
     year_month = start[:-3]
     file_name = f"{stock}_{year_month.replace('-', '_')}.txt"
     with open(glb.PATH_STOCKS_DATA + f"{stock}/" + file_name, 'r') as f_input:
@@ -73,8 +98,18 @@ def update_my_portfolio_files(stock, new_cash_invest_stock, ratio):
         glb.my_portfolio.update({stock: glb.Real_Stock_Object(stock,None,new_cash_invest_stock)})
 
 
-def divide_available_money(time_stamp:int,timeout = 15):
-    if time_stamp>0:
+def divide_available_money(time_stamp: int, timeout=15):
+    """
+    Reallocates the portfolio's capital based on the performance of the stocks.
+
+    This function ranks stocks based on their simulated performance and reallocates
+    capital from underperforming stocks to top-performing ones.
+
+    Args:
+        time_stamp (int): The current timestamp or counter of the simulation.
+        timeout (int): The timeout in seconds for the operation.
+    """
+    if time_stamp > 0:
         with glb.condition_clock_start:
             diff_time = glb.time_next_minute_break_ten_sec_before - dt.datetime.now()
         if diff_time.days == 0 and diff_time.seconds < 60:
@@ -82,12 +117,13 @@ def divide_available_money(time_stamp:int,timeout = 15):
     start_time = time.time()
     glb.request_stream_data_collection = True
     time.sleep(1)
-    while len(glb.client.ordId_active)>0 and glb.client.active:
+    while len(glb.client.ordId_active) > 0 and glb.client.active:
         glb.client.reqGlobalCancel()
         time.sleep(1)
     glb.request_stream_data_collection = False
 
-    end_time = start_time+timeout
+    end_time = start_time + timeout
+
     def clean_non_potential_stocks_from_portfolio(new_potential_stocks_list):
         stock_return_money = []
         # selling_threads = []
@@ -100,11 +136,13 @@ def divide_available_money(time_stamp:int,timeout = 15):
                     sub_thread = threading.Thread(target=glb.client.add_stock_to_stock_list, args=(stock,))
                     sub_thread.start()
                     sub_thread.join()
-                if glb.my_portfolio[stock].shears>0:
-                    sub_thread = threading.Thread(target=glb.client.try_buy_sell, args=(stock, 'SELL', glb.my_portfolio[stock].shears, 60,))
+                if glb.my_portfolio[stock].shears > 0:
+                    sub_thread = threading.Thread(target=glb.client.try_buy_sell,
+                                                  args=(stock, 'SELL', glb.my_portfolio[stock].shears, 60,))
                     sub_thread.start()
             if glb.my_portfolio[stock].shears < 0:
-                sub_thread = threading.Thread(target=glb.client.try_buy_sell, args=(stock, 'BUY', -1*glb.my_portfolio[stock].shears, 60,))
+                sub_thread = threading.Thread(target=glb.client.try_buy_sell,
+                                              args=(stock, 'BUY', -1 * glb.my_portfolio[stock].shears, 60,))
                 # selling_threads.append(sub_thread)
                 sub_thread.start()
         if len(stock_return_money) > 0:
@@ -116,12 +154,15 @@ def divide_available_money(time_stamp:int,timeout = 15):
         # for stock in pop_stock_list:
         #     glb.my_portfolio.pop(stock)
 
-    def decide_which_stocks_are_possible_to_be_most_profit(time_stamp:int):
-        if time_stamp>0:
-            profit_stocks = [[glb.demo_portfolio_treads[stock].accumulated_amount_percentage_day*glb.demo_portfolio_treads[stock].avg_volume, stock] for stock in glb.demo_portfolio_treads if ((200<glb.demo_portfolio_treads[stock].avg_volume)) ]#  and glb.demo_portfolio_treads[stock].amount_limit_flag)      glb.demo_portfolio_treads[stock].accumulated_amount_percentage_day>-100 and
+    def decide_which_stocks_are_possible_to_be_most_profit(time_stamp: int):
+        if time_stamp > 0:
+            profit_stocks = [
+                [glb.demo_portfolio_treads[stock].accumulated_amount_percentage_day * glb.demo_portfolio_treads[
+                    stock].avg_volume, stock] for stock in glb.demo_portfolio_treads if
+                ((200 < glb.demo_portfolio_treads[stock].avg_volume))]  # and glb.demo_portfolio_treads[stock].amount_limit_flag)      glb.demo_portfolio_treads[stock].accumulated_amount_percentage_day>-100 and
             profit_stocks.sort(key=lambda x: x[0], reverse=True)
             if len(profit_stocks) == 0:
-                return [],[1],0
+                return [], [1], 0
             if profit_stocks[-1][0] <= 0:
                 abs_min = abs(profit_stocks[-1][0])
                 for idx, ratio_stock in enumerate(profit_stocks):
@@ -130,14 +171,16 @@ def divide_available_money(time_stamp:int,timeout = 15):
             sum_slop = [float(x[0]) for x in profit_stocks]
             idx_lim = len(sum_slop)
         else:
-            profit_stocks = [[1, stock] for stock in glb.demo_portfolio_treads if 1 < glb.demo_portfolio_treads[stock].avg_volume]
+            profit_stocks = [[1, stock] for stock in glb.demo_portfolio_treads if
+                             1 < glb.demo_portfolio_treads[stock].avg_volume]
             sum_slop = np.ones(len(profit_stocks))
             idx_lim = len(sum_slop)
-        return profit_stocks,sum_slop,idx_lim
+        return profit_stocks, sum_slop, idx_lim
+
     stock = next(iter(glb.demo_portfolio_treads))
     glb.client.write_to_file(f"DIVIDE: conter' {glb.demo_portfolio_treads[stock].counter}")
     # print('DIVIDE: conter', (glb.demo_portfolio_treads[stocks[0]].counter))
-    profit_stocks,sum_slop,idx_lim = decide_which_stocks_are_possible_to_be_most_profit(time_stamp)
+    profit_stocks, sum_slop, idx_lim = decide_which_stocks_are_possible_to_be_most_profit(time_stamp)
     if len(profit_stocks) == 0:
         clean_non_potential_stocks_from_portfolio(["None"])
         return
@@ -150,8 +193,8 @@ def divide_available_money(time_stamp:int,timeout = 15):
             return
     sum_of_sum_slop = sum(sum_slop)
     with glb.key_lock_available_money:
-        total_money_to_divide = (glb.my_available_money_dollar-500)
-    partial_money = total_money_to_divide / sum_of_sum_slop #real: need to get available buying power
+        total_money_to_divide = (glb.my_available_money_dollar - 500)
+    partial_money = total_money_to_divide / sum_of_sum_slop  # real: need to get available buying power
     glb.client.write_to_file(f"DIVIDE: divide total money of: {total_money_to_divide}")
     stock_that_got_divide = []
     for idx, ratio_stock in enumerate(profit_stocks):
@@ -161,20 +204,32 @@ def divide_available_money(time_stamp:int,timeout = 15):
                 price = glb.demo_portfolio_treads[ratio_stock[1]].current_price
                 # price = 115
                 # new_cash_invest_stock = max(0,min(round(partial_money * ratio_stock[0], 2),glb.demo_portfolio_treads[ratio_stock[1]].avg_volume+price*5-glb.my_portfolio[ratio_stock[1]].total_stock_net_value))
-                glb.my_portfolio[ratio_stock[1]].total_stock_net_value = glb.my_portfolio[ratio_stock[1]].shears * price + glb.my_portfolio[ratio_stock[1]].available_money
-                stock_current_net = glb.my_portfolio[ratio_stock[1]].total_stock_net_value if ratio_stock[1] in glb.my_portfolio else 0
+                glb.my_portfolio[ratio_stock[1]].total_stock_net_value = glb.my_portfolio[
+                                                                             ratio_stock[1]].shears * price + \
+                                                                         glb.my_portfolio[
+                                                                             ratio_stock[1]].available_money
+                stock_current_net = glb.my_portfolio[
+                    ratio_stock[1]].total_stock_net_value if ratio_stock[1] in glb.my_portfolio else 0
                 with glb.key_lock_available_money:
-                    new_cash_invest_stock = max(0, min(glb.my_available_money_dollar - 500, round(partial_money * ratio_stock[0], 2), glb.demo_portfolio_treads[ratio_stock[1]].avg_volume * price - stock_current_net))
+                    new_cash_invest_stock = max(0, min(glb.my_available_money_dollar - 500,
+                                                      round(partial_money * ratio_stock[0], 2),
+                                                      glb.demo_portfolio_treads[
+                                                          ratio_stock[1]].avg_volume * price - stock_current_net))
                     predict_trade_commission = round(max(1.0, 0.007 * new_cash_invest_stock / price), 3)
-                    stock_net = glb.my_portfolio[ratio_stock[1]].total_stock_net_value+new_cash_invest_stock
-                    if stock_net*0.0004 < predict_trade_commission*2:
+                    stock_net = glb.my_portfolio[ratio_stock[1]].total_stock_net_value + new_cash_invest_stock
+                    if stock_net * 0.0004 < predict_trade_commission * 2:
                         continue
                     glb.my_available_money_dollar -= new_cash_invest_stock
-                update_my_portfolio_files(ratio_stock[1], new_cash_invest_stock, profit_stocks[idx][0] / sum_of_sum_slop)
+                update_my_portfolio_files(ratio_stock[1], new_cash_invest_stock,
+                                          profit_stocks[idx][0] / sum_of_sum_slop)
                 glb.my_portfolio[ratio_stock[1]].flag_invest_in_this_stock = True
-                glb.my_portfolio[ratio_stock[1]].total_stock_net_value = glb.my_portfolio[ratio_stock[1]].shears * price + glb.my_portfolio[ratio_stock[1]].available_money
+                glb.my_portfolio[ratio_stock[1]].total_stock_net_value = glb.my_portfolio[
+                                                                             ratio_stock[1]].shears * price + \
+                                                                         glb.my_portfolio[
+                                                                             ratio_stock[1]].available_money
                 optional_cash = glb.my_portfolio[ratio_stock[1]].total_stock_net_value
-                glb.client.write_to_file(f"DIVIDE: {ratio_stock[1]},stock net: {optional_cash}, new invest:{round(new_cash_invest_stock,2)},ratio from start: {round(optional_cash/glb.my_available_money_dollar_start,2)}")
+                glb.client.write_to_file(
+                    f"DIVIDE: {ratio_stock[1]},stock net: {optional_cash}, new invest:{round(new_cash_invest_stock, 2)},ratio from start: {round(optional_cash / glb.my_available_money_dollar_start, 2)}")
                 stock_that_got_divide.append(ratio_stock[1])
                 # if glb.demo_portfolio_treads[ratio_stock[1]].flag_enter_status and glb.demo_portfolio_treads[ratio_stock[1]].amount_limit_flag and not glb.my_portfolio[ratio_stock[1]].flag_enter_status:
                 # # if glb.demo_portfolio_treads[ratio_stock[1]].flag_enter_status and glb.demo_portfolio_treads[ratio_stock[1]].amount_limit_flag:
@@ -182,12 +237,14 @@ def divide_available_money(time_stamp:int,timeout = 15):
 
         else:
             optional_cash = glb.my_portfolio[ratio_stock[1]].total_stock_net_value
-            glb.client.write_to_file(f"DIVIDE: {ratio_stock[1]},stock net: {optional_cash}, new invest:0 ,ratio from start: {round(optional_cash / glb.my_available_money_dollar_start, 2)}")
+            glb.client.write_to_file(
+                f"DIVIDE: {ratio_stock[1]},stock net: {optional_cash}, new invest:0 ,ratio from start: {round(optional_cash / glb.my_available_money_dollar_start, 2)}")
     with glb.key_lock_available_money:
-        spear_money = glb.my_available_money_dollar-500
-    if spear_money>1 and len(stock_that_got_divide)>0 :
-        partioal_money = spear_money/len(stock_that_got_divide)
-        glb.client.write_to_file(f"DIVIDE: left {spear_money} cash ,and divide it between {len(stock_that_got_divide)} stocks :{partioal_money} ")
+        spear_money = glb.my_available_money_dollar - 500
+    if spear_money > 1 and len(stock_that_got_divide) > 0:
+        partioal_money = spear_money / len(stock_that_got_divide)
+        glb.client.write_to_file(
+            f"DIVIDE: left {spear_money} cash ,and divide it between {len(stock_that_got_divide)} stocks :{partioal_money} ")
         for stock in stock_that_got_divide:
             update_my_portfolio_files(stock, partioal_money, 0)
         with glb.key_lock_available_money:
@@ -214,6 +271,16 @@ def binary_tree_search(list_search, val):
 
 
 def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
+    """
+    The main simulation loop for a single stock.
+
+    This function is executed in a separate thread for each stock. It simulates
+    the trading strategy on a minute-by-minute basis, either using historical
+    data (for backtesting) or live data (for paper/live trading).
+
+    Args:
+        stock_object (glb.Demo_Stock_Object): The stock object to simulate.
+    """
     avg_list_day = []
     stock_object.real_avg_list = []
     volume_list = stock_object.real_volume_list
@@ -222,15 +289,15 @@ def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
     lower_half_volume = np.array(lower_half_volume) / len(lower_half_volume)
     stock_object.avg_volume = lower_half_volume.sum()
     if glb.dbg_local:
-        stock_log_price_times_path = glb.PATH_RESULTS.replace('debug','day_trade')+f"{stock_object.stock_name}/log_price_times" + stock_object.stock_name + '.csv'
+        stock_log_price_times_path = glb.PATH_RESULTS.replace('debug', 'day_trade') + f"{stock_object.stock_name}/log_price_times" + stock_object.stock_name + '.csv'
         with open(stock_log_price_times_path, "r") as file:
             import csv
             reader = csv.reader(file)
             lists = []
             for row in reader:
                 lists.append(row)
-            stock_object.real_avg_list_times= copy.deepcopy(lists[0])#'dates'
-            avg_list_day = [float(val) for val in lists[1]]#'avg'
+            stock_object.real_avg_list_times = copy.deepcopy(lists[0])  # 'dates'
+            avg_list_day = [float(val) for val in lists[1]]  # 'avg'
             stock_object.real_avg_list = copy.deepcopy(avg_list_day)
             # volume_list =[float(val) for val in lists[2]]#'volume'
             stock_object.current_price = avg_list_day[0]
@@ -254,7 +321,8 @@ def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
         # avg_list_day.append(price)
         # stock_object.real_avg_list.append(price)
         if not glb.dbg_local:
-            print(f"{stock_object.stock_name} start round at time  {current_time.hour} : {current_time.minute} : {current_time.second}")
+            print(
+                f"{stock_object.stock_name} start round at time  {current_time.hour} : {current_time.minute} : {current_time.second}")
             while True:
                 price, status = stock_object.get_last_price("LAST_PRICE")  # real: get stock last price
                 # price, status = stock_object.get_last_price("CLOSE")  # real: get stock last price
@@ -275,7 +343,6 @@ def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
         #     lower_half_volume = np.array(lower_half_volume)/len(lower_half_volume)
         #     stock_object.avg_volume = lower_half_volume.sum()
 
-
         #### i think this part should be in the end of the minute ####
         # stock_object.break_point_to_divide_the_real_money_between_stocks(stock_object.counter)
 
@@ -283,20 +350,21 @@ def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
             stock_object.max_amount = stock_object.accumulated_amount
         if price < minimum_price:
             minimum_price = price
-            if 100*(stock_object.start_price-price)/stock_object.start_price > glb.limit_presantage:
+            if 100 * (stock_object.start_price - price) / stock_object.start_price > glb.limit_presantage:
                 stock_object.start_accumulated_amount = stock_object.accumulated_amount
                 stock_object.amount_limit_num = glb.limit_presantage
                 stock_object.relative_start_price = price
 
         # stock_object.analyze_the_histogram_and_set_the_next_action()
         if not glb.dbg_local:
-            stock_interval_change = round((float(price-avg_list_day[-2])),2) if stock_object.counter > 0 else 0
+            stock_interval_change = round((float(price - avg_list_day[-2])), 2) if stock_object.counter > 0 else 0
         else:
-            stock_interval_change = round((float(price-avg_list_day[stock_object.counter-1])),2) if stock_object.counter > 0 else 0
+            stock_interval_change = round((float(price - avg_list_day[stock_object.counter - 1])),
+                                          2) if stock_object.counter > 0 else 0
 
         #### this part need to change to order requests ####
-        stock_object.simulate_the_next_trade(price,stock_interval_change,stock_object.counter)
-        stock_object.Safe_Limit_condition_stock_trade(price,stock_object.counter)
+        stock_object.simulate_the_next_trade(price, stock_interval_change, stock_object.counter)
+        stock_object.Safe_Limit_condition_stock_trade(price, stock_object.counter)
 
         #### this will help me devide the money with the potntial stocks ####
         stock_object.accumulated_amount_percentage_day = 100 * stock_object.accumulated_amount_limit / stock_object.start_price
@@ -317,13 +385,13 @@ def simulate_trading_local_data(stock_object: glb.Demo_Stock_Object):
             # secound_wait = min(diff_time.seconds,diff_time_end.seconds)
             # if diff_time.days == 0 and diff_time.seconds < 60 and current_time < glb.time_end_of_trading_day:
             #     time.sleep(secound_wait+diff_time.microseconds/1e6)
-                # with glb.condition_one_minute:
-                #     glb.condition_one_minute.wait()
+            # with glb.condition_one_minute:
+            #     glb.condition_one_minute.wait()
             # else:
             #     time.sleep(3)
             current_time = dt.datetime.now()
         else:
-            if stock_object.counter == (len(avg_list_day)-1):
+            if stock_object.counter == (len(avg_list_day) - 1):
                 current_time = glb.time_end_of_trading_day
         stock_object.counter += 1
         if glb.flag_time_of_last_five_min:

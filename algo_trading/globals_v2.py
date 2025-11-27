@@ -1,3 +1,11 @@
+"""
+Global State and Configuration Management.
+
+This module serves as a centralized store for all global variables, configuration
+parameters, and shared data structures used across the trading application. It
+is imported by various modules to access and modify the application's state.
+
+"""
 import threading
 import datetime as dt
 import os
@@ -5,52 +13,74 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 
-clock_start= False
-night_mode = False
-include_pre_post_mkt = True
-debug_mode = False
-dbg_local =False
+# --- General Application Flags ---
+clock_start = False  # Flag to start the main application clock.
+night_mode = False  # Flag to indicate if the application is in night mode.
+include_pre_post_mkt = True  # Flag to include pre-market and post-market data.
+debug_mode = False  # General debug flag.
+dbg_local = False  # If True, runs in backtesting mode using local data. If False, runs in live/paper trading mode.
 
-job_by_one_thread = ''
-my_available_money_dollar_start = 1000000
-ratio_trade_in_volume_minute = 0.1
-limit_presantage=5
-key_lock_available_money = threading.Lock()
-key_lock_times = threading.Lock()
-my_available_money_dollar = my_available_money_dollar_start
-not_first_day = True
-current_date = ''
-demo_portfolio_treads = {}
-demo_portfolio_treads_Limit = {}
-my_portfolio = {}
-stock_that_been_used = {}
-my_init_demo_available_money_dollar = 2e5
-day_timestamp = 60 * 60 * 24
-flag_first_day = True
-counter = 0
-real_logs = list()
-real_logs_csv = list()
-day_barrier = threading.Barrier(0)
-flag_money_divide = True
-flag_time_of_last_five_min = False
-time_next_minute_break = 0
-time_next_minute_break_ten_sec_before = 0
-time_of_last_five_min = 0
-time_end_of_trading_day = 0
-time_start_of_trading_day = 0
-slop_d_num_neg_flag = -0.002
-slop_d_num_pos_flag = 0
-slop_num_pos_flag = 0
-PATH_RESULTS = '/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result'
-PATH_STOCKS_DATA = '/Users/ofirdahan/Desktop/interactive brokers/stock_data/'
-stocks_data = {}
-key_lock_stocks_data = threading.Lock()
-data_request = 'LOCAL'
-condition_one_minute = threading.Condition()
-condition_clock_start = threading.Condition()
 
-request_stream_data_collection = False
-client = None
+# --- Portfolio and Money Management ---
+job_by_one_thread = ''  # Holds the name of the stock being processed if running in single-thread mode.
+my_available_money_dollar_start = 1000000  # Initial capital for the portfolio.
+ratio_trade_in_volume_minute = 0.1  # The ratio of the volume to trade in a single minute.
+limit_presantage = 5  # The percentage for the trailing stop-loss/take-profit limit.
+key_lock_available_money = threading.Lock()  # Lock for synchronizing access to the main portfolio cash.
+my_available_money_dollar = my_available_money_dollar_start  # The current available cash in the portfolio.
+my_portfolio = {}  # Dictionary to hold the `Real_Stock_Object` instances for the live portfolio.
+stock_that_been_used = {}  # Tracks which stocks have been traded.
+
+
+# --- Demo/Simulation Portfolio ---
+demo_portfolio_treads = {}  # Dictionary to hold the `Demo_Stock_Object` instances for simulation.
+demo_portfolio_treads_Limit = {}  # A secondary dictionary for limit-based simulations.
+my_init_demo_available_money_dollar = 2e5  # Initial capital for each demo stock simulation.
+
+
+# --- Time and Date Management ---
+not_first_day = True  # Flag to indicate if it's not the first day of the simulation.
+current_date = ''  # The current date of the simulation.
+day_timestamp = 60 * 60 * 24  # The number of seconds in a day.
+flag_first_day = True  # Flag to indicate if it's the first day of the simulation.
+time_next_minute_break = 0  # The timestamp for the next one-minute interval.
+time_next_minute_break_ten_sec_before = 0  # Timestamp 10 seconds before the next minute break.
+time_of_last_five_min = 0  # Timestamp for the last five minutes of the trading day.
+time_end_of_trading_day = 0  # The timestamp for the end of the trading day.
+time_start_of_trading_day = 0  # The timestamp for the start of the trading day.
+
+
+# --- Logging and Reporting ---
+counter = 0  # A general-purpose counter.
+real_logs = list()  # A list to store human-readable log entries.
+real_logs_csv = list()  # A list to store log entries formatted for CSV output.
+
+
+# --- Threading and Synchronization ---
+day_barrier = threading.Barrier(0)  # A barrier to synchronize all stock threads at the end of each day.
+flag_money_divide = True  # Flag to control the capital reallocation logic.
+key_lock_times = threading.Lock()  # A lock for time-related variables.
+condition_one_minute = threading.Condition()  # A condition variable for minute-based synchronization.
+condition_clock_start = threading.Condition()  # A condition variable to signal the start of the clock.
+
+
+# --- Strategy Parameters ---
+slop_d_num_neg_flag = -0.002  # A parameter for the slope calculation in the trading strategy.
+slop_d_num_pos_flag = 0  # A parameter for the slope calculation in the trading strategy.
+slop_num_pos_flag = 0  # A parameter for the slope calculation in the trading strategy.
+
+
+# --- Data and File Paths ---
+PATH_RESULTS = '/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result'  # Path to save results.
+PATH_STOCKS_DATA = '/Users/ofirdahan/Desktop/interactive brokers/stock_data/'  # Path to historical stock data.
+stocks_data = {}  # A dictionary to hold the loaded stock data.
+key_lock_stocks_data = threading.Lock()  # A lock for synchronizing access to the stock data dictionary.
+data_request = 'LOCAL'  # The source of the data ('LOCAL' or 'IBKR').
+
+
+# --- IBKR Connection ---
+request_stream_data_collection = False  # Flag to request streaming data from IBKR.
+client = None  # The global instance of the Interactive Brokers client.
 class Real_Stock_actions:
     Buy = 0
     Sell = 1

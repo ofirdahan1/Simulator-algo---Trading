@@ -1,3 +1,10 @@
+"""
+Main entry point for the algorithmic trading bot.
+
+This script initializes the trading environment, sets key configuration parameters,
+and starts the trading process. It is the primary file to run for both
+backtesting and live trading sessions.
+"""
 import enum
 
 from protfolio_mangment_fun_v2 import *
@@ -10,6 +17,11 @@ import time
 # 65.06% VOO
 # 407.68% MSTR
 # 960.7851% TQQQ
+# --- Configuration: Stock Portfolio ---
+# Define the list of stocks to be traded or backtested.
+# The list is overwritten multiple times; the last definition is the one that will be used.
+# For example, to trade only TQQQ, TSLA, GOOG, NVDA, AAPL, and MSTR, ensure the final line is:
+# stocks_check = ['TQQQ','TSLA','GOOG','NVDA','AAPL','MSTR']
 stocks_check = ['AAPL','AMD','TQQQ','VOO','DIS','MCD','ITB','TSLA','LLY','MSTR']
 stocks_check += ['TSM','NFLX','GOOG','NVDA','AMZN','AVGO','NVO','MA','PG','MRK','HD','AMT','SOXL']
 stocks_check += ['META','MAGS','MSFT']
@@ -20,11 +32,26 @@ stocks_check = ['NVDA','AAPL','SEDG','NKE','SOXL','CAR']
 stocks_check = ['SOXL']
 stocks_check = ['TQQQ','TSLA','GOOG','NVDA','AAPL','MSTR']
 
-# trade_and_update_portfolio(stocks_check,end="2022-04-28",wanted_num_days = 7,interval="1m")
+
+# --- Configuration: Global Settings ---
+
+# Set the initial starting capital for the portfolio.
 glb.my_available_money_dollar_start = 200000
 glb.my_available_money_dollar = glb.my_available_money_dollar_start
+
+# Determines whether to include pre-market and post-market data in the simulation.
 glb.include_pre_post_mkt = False
+
+
+# --- Configuration: Trading Mode ---
+# Set the trading mode for the application.
+# - Set to True for backtesting using local historical data.
+# - Set to False for live or paper trading via Interactive Brokers.
 glb.dbg_local = False
+
+
+# --- Execution ---
+# Initiates the trading process with the configured stocks and settings.
 trade_and_update_portfolio_local_data(stocks_check)
 # trade_and_update_portfolio_local_data(stocks_check,start="2024-07-01" ,end="2024-07-31")
 # trade_and_update_portfolio_local_data(stocks_check,start="2022-01-03" ,end="2022-09-30")

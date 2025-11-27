@@ -1,3 +1,19 @@
+"""
+Interactive Brokers (IBKR) Connection and API Wrapper.
+
+This module provides a comprehensive wrapper around the official Interactive Brokers
+Python API (`ibapi`). It is designed to handle the complexities of a multi-threaded
+trading environment, including:
+
+- Connection management and automatic reconnection.
+- Asynchronous data handling for market data and account updates.
+- Order creation, placement, and cancellation logic.
+- Detailed logging of all API interactions.
+- Synchronization primitives (locks, barriers, conditions) to ensure thread safety.
+
+The `IBClient` class is the central component, inheriting from `EWrapper` (to handle
+incoming messages from TWS) and `EClient` (to send requests to TWS).
+"""
 import time
 import queue
 import threading
@@ -21,18 +37,23 @@ import globals_v2 as glb
 
 from threading import Thread
 
-ACCOUNT_ID = ""
-DEFAULT_HOST = '127.0.0.1'
-DEFAULT_CLIENT_ID = 1
-LOG_FILE_PATH = f"/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result/"
-LIVE_TRADING = False
-LIVE_TRADING_PORT = 4001
-PAPER_TRADING_PORT = 4002
-PAPER_TRADING_PORT_TWS = 7496
+# --- IBKR Connection Configuration ---
+ACCOUNT_ID = ""  # Your Interactive Brokers account ID.
+DEFAULT_HOST = '127.0.0.1'  # The host where TWS/Gateway is running.
+DEFAULT_CLIENT_ID = 1  # A unique client ID for this connection.
+LOG_FILE_PATH = f"/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result/"  # Path for the log file.
+
+# --- Trading Mode Configuration ---
+LIVE_TRADING = False  # Set to True for live trading, False for paper trading.
+LIVE_TRADING_PORT = 4001  # Default port for live trading with IB Gateway.
+PAPER_TRADING_PORT = 4002  # Default port for paper trading with IB Gateway.
+PAPER_TRADING_PORT_TWS = 7496  # Default port for paper trading with TWS.
+
+# Set the trading port based on the LIVE_TRADING flag.
 TRADING_PORT = PAPER_TRADING_PORT_TWS
 if LIVE_TRADING:
     TRADING_PORT = LIVE_TRADING_PORT
-    ACCOUNT_ID = ""
+    ACCOUNT_ID = ""  # Ensure your live account ID is set here.
 
 data_queue = queue.Queue()
 tick_set = set()
@@ -192,43 +213,56 @@ class RT_stock_data():
         str_print = "".join(str_print)
         return self.name+f" ,POS:{self.shears}"+str_print
 class IBClient(EWrapper, EClient):
+    """
+    The main client class for interacting with the Interactive Brokers API.
 
+    This class handles the connection, message processing, and request sending.
+    It is designed to be run in a separate thread to handle the asynchronous
+    nature of the IBKR API.
+    """
     def __init__(self):
+        """
+        Initializes the IBClient, sets up threading locks, connects to TWS,
+        and starts the message processing loop.
+        """
         EClient.__init__(self, self)
-        self.active = True
-        self.key_lock = threading.Lock()
-        self.key_lock_client = threading.Lock()
-        self.key_lock_wrapper = threading.Lock()
-        self.key_lock_log_file = threading.Lock()
+        self.active = True  # Flag to control the main loop and reconnection logic.
 
-        self.stock_counter = 0
-        self.key_lock_barriers = threading.Lock()
-        self.C_W_barriers = {}
-        self.key_lock_reqId_stock_data = threading.Lock()
-        self.stocks_data = {}
-        self.reqId_stock = {}
-        self.key_lock_execId_commission = threading.Lock()
-        self.execId_symbol_commission = {}
+        # --- Threading Locks and Synchronization Primitives ---
+        self.key_lock = threading.Lock()  # General purpose lock.
+        self.key_lock_client = threading.Lock()  # Lock for client-side operations.
+        self.key_lock_wrapper = threading.Lock()  # Lock for wrapper-side operations.
+        self.key_lock_log_file = threading.Lock()  # Lock for writing to the log file.
+        self.key_lock_barriers = threading.Lock()  # Lock for managing barriers.
+        self.key_lock_reqId_stock_data = threading.Lock()  # Lock for the stock data dictionary.
+        self.key_lock_execId_commission = threading.Lock()  # Lock for commission reports.
+        self.key_lock_ordId = threading.Lock()  # Lock for active order IDs.
+        self.key_lock_cancel_appending = threading.Lock()  # Lock for pending cancellations.
+        self.key_lock_account = threading.Lock()  # Lock for account data.
+        self.key_lock_ordId_new = threading.Condition()  # Condition to wait for a valid order ID.
 
-        self.key_lock_ordId = threading.Lock()
-        self.ordId_active = {}
-        self.key_lock_cancel_appending = threading.Lock()
-        self.cancel_appending = {}
-        self.ordId_active_group = {'BUY':[],'SELL':[]}
-        self.key_lock_account = threading.Lock()
-        self.account = account_data()
+        # --- Data Structures for State Management ---
+        self.stock_counter = 0  # Counter for assigning unique request IDs to stocks.
+        self.C_W_barriers = {}  # Dictionary to hold barriers for synchronization.
+        self.stocks_data = {}  # Dictionary to store real-time and historical data for each stock.
+        self.reqId_stock = {}  # Maps request IDs to stock symbols.
+        self.execId_symbol_commission = {}  # Maps execution IDs to commission data.
+        self.ordId_active = {}  # Dictionary of active order IDs.
+        self.cancel_appending = {}  # Dictionary for tracking cancellation requests.
+        self.ordId_active_group = {'BUY': [], 'SELL': []}  # Groups active orders by action.
+        self.account = account_data()  # Object to hold account information.
+        self.valid_order_id = 100  # The next valid order ID to be used.
 
-        self.key_lock_ordId_new = threading.Condition()
-        self.valid_order_id = 100
-
-        self.MarketDataType = 1
-
+        # --- Connection and Initialization ---
+        self.MarketDataType = 1  # 1 for live, 3 for delayed data.
         self.connect(DEFAULT_HOST, TRADING_PORT, DEFAULT_CLIENT_ID)
-        thread = Thread(target=self.run)
+        thread = Thread(target=self.run)  # Start the message loop in a background thread.
         thread.start()
+
+        # --- Logging ---
         global LOG_FILE_PATH
-        LOG_FILE_PATH = glb.PATH_RESULTS +f"ibkr_log_{datetime.today().strftime('Y%Y_M%m_D%d__%Hh_%Mm_%Ss')}.txt"
-        self.write_to_file('',mode='+w')
+        LOG_FILE_PATH = glb.PATH_RESULTS + f"ibkr_log_{datetime.today().strftime('Y%Y_M%m_D%d__%Hh_%Mm_%Ss')}.txt"
+        self.write_to_file('', mode='+w')  # Create/clear the log file.
         time.sleep(1)
 
     ######### EWrapper ###########
@@ -585,7 +619,17 @@ class IBClient(EWrapper, EClient):
             self.reqHistoricalData(reqId, contract, endDateTime,durationStr, barSizeSetting, whatToShow,useRTH, formatDate, keepUpToDate, chartOptions)
         self.write_to_file(f"reqId:{reqId} request historicalData",contract.symbol)
         self.barrier_for_2_thread_base_on_reqId(reqId)
-    def place_order(self,contract, order):
+    def place_order(self, contract, order):
+        """
+        Places an order with the given contract and order details.
+
+        Args:
+            contract: The contract object for the order.
+            order: The order object with details like action, quantity, and type.
+
+        Returns:
+            The order ID of the placed order.
+        """
         self.tryReconnectIfNot()
         # flag = False
         # with self.key_lock_ordId:
@@ -595,6 +639,8 @@ class IBClient(EWrapper, EClient):
         with self.key_lock_client:
             ordId = self.add_active_order_id(contract.symbol, order.action)
             self.placeOrder(ordId, contract, order)
+
+        # Log the order placement details.
         with self.key_lock_reqId_stock_data:
             bid = self.stocks_data[contract.symbol].Data['BID_PRICE']
             ask = self.stocks_data[contract.symbol].Data['ASK_PRICE']

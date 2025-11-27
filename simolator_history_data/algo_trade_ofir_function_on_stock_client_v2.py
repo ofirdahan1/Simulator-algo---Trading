@@ -1,3 +1,17 @@
+"""
+Core Trading Logic and Simulation Engine for Backtesting.
+
+This module is the heart of the backtesting simulator, containing the primary
+trading algorithm, the simulation engine, and the data structures for managing
+stock information.
+
+Key components:
+- `Stock_Object`, `Demo_Stock_Object`, `Real_Stock_Object`: Classes that define
+  the data structures for stocks in the simulation.
+- `simulate_trading_local_data`: The main simulation loop for a single stock.
+- `Safe_Limit_condition_stock_trade_5`: The core trading strategy, implementing a
+  trailing stop-loss/take-profit mechanism.
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
@@ -157,9 +171,18 @@ def divide_available_money(time_stamp):
 
 
 class Stock_Object():
-
+    """
+    A base class representing a stock in the simulation.
+    """
     def __init__(self, stock_name, barrier, init_money):
+        """
+        Initializes a Stock_Object.
 
+        Args:
+            stock_name (str): The stock symbol.
+            barrier (threading.Barrier): A barrier for thread synchronization.
+            init_money (float): The initial capital for this stock object.
+        """
         self.stock_name = stock_name
         self.thread_id = None
         self.thread_response = None
@@ -170,77 +193,110 @@ class Stock_Object():
         self.shears = 0
         self.accumulated_amount = 0
         self.accumulated_amount_percentage_day = 0
-        self.start_accumulated_amount = -glb.avg_commission_per_shear-0.001
+        self.start_accumulated_amount = -glb.avg_commission_per_shear - 0.001
         self.available_money = init_money
         self.init_money = init_money
 
 
 class Real_Stock_Object(Stock_Object):
+    """
+    Represents a stock in the real portfolio, handling actual buy/sell operations.
+    """
     def __init__(self, stock_name, barrier, init_money):
-        super().__init__(stock_name, barrier,init_money)
+        super().__init__(stock_name, barrier, init_money)
         self.real_logs = list()
         self.total_stock_net_value = init_money
 
-    def real_sell_shears(self, price,time_stamp,volume):
+    def real_sell_shears(self, price, time_stamp, volume):
+        """
+        Executes a real sell order for the stock.
+        """
         shears_trade_action = int(min(volume * glb.ratio_trade_in_volume_minute, self.shears))
-        if shears_trade_action > 0:#real:sell
-        # if self.shears > 0:
-            commission = max(1.0, shears_trade_action * glb.avg_commission_per_shear)+glb.real_time_commision*shears_trade_action
+        if shears_trade_action > 0:  # real:sell
+            # if self.shears > 0:
+            commission = max(1.0, shears_trade_action * glb.avg_commission_per_shear) + glb.real_time_commision * shears_trade_action
             self.available_money = round(self.available_money + shears_trade_action * price - commission, 3)
             self.shears -= shears_trade_action
             self.total_stock_net_value = self.available_money + self.shears * price
             self.store_to_logs_info('SELL', time_stamp, price, shears_trade_action, commission)
 
         # commission = max(1.0, self.shears * 0.005)
-            # self.available_money = round(self.available_money + self.shears * price - commission, 3)
-            # self.store_to_logs_info('SELL', time_stamp,price,self.shears, commission)
-            # self.shears = 0
+        # self.available_money = round(self.available_money + self.shears * price - commission, 3)
+        # self.store_to_logs_info('SELL', time_stamp,price,self.shears, commission)
+        # self.shears = 0
         if self.shears == 0:
             self.flag_enter_status = False
-        if time_stamp == (glb.min_num_of_time_stamp_in_stocks_current_day-1) and self.shears != 0:
+        if time_stamp == (glb.min_num_of_time_stamp_in_stocks_current_day - 1) and self.shears != 0:
             RuntimeError("finish day with stocks")
 
-    def real_buy_shears(self, price,time_stamp,volume):
-        if self.available_money > 0 : #and glb.demo_portfolio_treads[self.stock_name].avg_volume/price >100
-        # if self.available_money > 0:
-            buying_power = max(0,min(glb.demo_portfolio_treads[self.stock_name].avg_volume,glb.ratio_trade_in_volume_minute * volume, self.available_money/price,glb.demo_portfolio_treads[self.stock_name].avg_volume-self.shears))*price
+    def real_buy_shears(self, price, time_stamp, volume):
+        """
+        Executes a real buy order for the stock.
+        """
+        if self.available_money > 0:  # and glb.demo_portfolio_treads[self.stock_name].avg_volume/price >100
+            # if self.available_money > 0:
+            buying_power = max(0, min(glb.demo_portfolio_treads[self.stock_name].avg_volume,
+                                     glb.ratio_trade_in_volume_minute * volume, self.available_money / price,
+                                     glb.demo_portfolio_treads[
+                                         self.stock_name].avg_volume - self.shears)) * price
             # buying_power = (200*price + 20) if self.shears == 0 else 0
             predict_trade_commission = round(max(1.0, glb.avg_commission_per_shear * buying_power / price), 3)
-            new_shears = max(int((buying_power - predict_trade_commission - 10) / price), 0) #real:buy
+            new_shears = max(int((buying_power - predict_trade_commission - 10) / price), 0)  # real:buy
             # predict_trade_commission = round(max(1.0, self.available_money * 0.005 / price), 3)
             # new_shears = max(int((self.available_money - predict_trade_commission - 10) / price), 0)
-            if (new_shears*price*0.0004 > predict_trade_commission*2) or True:
-            # if new_shears>0:
+            if (new_shears * price * 0.0004 > predict_trade_commission * 2) or True:
+                # if new_shears>0:
                 self.shears += new_shears
-                commission = max(1.0, new_shears * glb.avg_commission_per_shear) +glb.real_time_commision*new_shears
+                commission = max(1.0,
+                                 new_shears * glb.avg_commission_per_shear) + glb.real_time_commision * new_shears
                 self.available_money = round(self.available_money - new_shears * price - commission, 3)
                 self.total_stock_net_value = self.available_money + self.shears * price
                 self.flag_enter_status = True
-                self.store_to_logs_info('BUY', time_stamp,price,new_shears,commission)
-
+                self.store_to_logs_info('BUY', time_stamp, price, new_shears, commission)
 
     def return_available_real_cash(self):
+        """
+        Returns the available cash from this stock object to the main portfolio.
+        """
         if self.available_money > 0:
             with key_lock:
                 glb.my_available_money_dollar += self.available_money
         self.available_money = 0
 
-    def store_to_logs_info(self,action,time_stamp,price,shears,commission):
+    def store_to_logs_info(self, action, time_stamp, price, shears, commission):
+        """
+        Stores transaction information to the global logs.
+        """
         with key_lock:
             if 'BUY' in action:
-                glb.real_logs.append(glb.current_date+' '+self.stock_name+' time stamp:'+str(time_stamp)+' action:'+action+' price:'+str(price)+' shears:'+str(shears)+ ' commission:'+str(commission)+' proff:'+"%.2f" %(glb.my_available_money_dollar)) #"%.2f" %(100*(self.available_money+self.shears*price-self.init_money)/self.init_money
+                glb.real_logs.append(
+                    glb.current_date + ' ' + self.stock_name + ' time stamp:' + str(time_stamp) + ' action:' + action + ' price:' + str(
+                        price) + ' shears:' + str(shears) + ' commission:' + str(
+                        commission) + ' proff:' + "%.2f" % (glb.my_available_money_dollar))  # "%.2f" %(100*(self.available_money+self.shears*price-self.init_money)/self.init_money
                 # glb.real_logs_csv.append([glb.current_date, str(time_stamp), self.stock_name, action, str(price),str(glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][time_stamp]), str(shears),commission,"%.2f" %(self.total_stock_net_value), "%.2f" %(glb.my_available_money_dollar)])
-                glb.real_logs_csv.append([glb.current_date, time_stamp, self.stock_name, action, price,glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][time_stamp], shears,commission,(self.total_stock_net_value),(glb.my_available_money_dollar)])
+                glb.real_logs_csv.append([glb.current_date, time_stamp, self.stock_name, action, price,
+                                          glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][
+                                              time_stamp], shears, commission, (self.total_stock_net_value),
+                                          (glb.my_available_money_dollar)])
             else:
-                glb.real_logs.append(glb.current_date+' '+self.stock_name+' time stamp:'+str(time_stamp)+' action:'+action+' price:'+str(price)+' shears:'+str(shears)+ ' commission:'+str(commission)+' proff:'+"%.2f" %(glb.my_available_money_dollar))
+                glb.real_logs.append(
+                    glb.current_date + ' ' + self.stock_name + ' time stamp:' + str(time_stamp) + ' action:' + action + ' price:' + str(
+                        price) + ' shears:' + str(shears) + ' commission:' + str(
+                        commission) + ' proff:' + "%.2f" % (glb.my_available_money_dollar))
                 # glb.real_logs_csv.append([glb.current_date,str(time_stamp),self.stock_name,action,str(price),str(glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][time_stamp]),str(-1*shears),commission,"%.2f" %(self.total_stock_net_value),"%.2f" %(glb.my_available_money_dollar)])
-                glb.real_logs_csv.append([glb.current_date, time_stamp, self.stock_name, action, price,glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][time_stamp], -1*shears,commission,(self.total_stock_net_value),(glb.my_available_money_dollar)])
+                glb.real_logs_csv.append([glb.current_date, time_stamp, self.stock_name, action, price,
+                                          glb.demo_portfolio_treads[self.stock_name].real_volume_list[-1][
+                                              time_stamp], -1 * shears, commission,
+                                          (self.total_stock_net_value), (glb.my_available_money_dollar)])
 
     def write_to_log_info(self):
+        """
+        Writes the logs for this stock to a file.
+        """
         import csv
         if not os.path.isdir(glb.PATH_RESULTS):
             os.mkdir(glb.PATH_RESULTS)
-        real_log_path = glb.PATH_RESULTS+'/real_log.txt'
+        real_log_path = glb.PATH_RESULTS + '/real_log.txt'
         with key_lock:
             with open(real_log_path, 'a') as f:
                 for line in self.real_logs:
@@ -248,9 +304,11 @@ class Real_Stock_Object(Stock_Object):
 
 
 class Demo_Stock_Object(Stock_Object):
-
+    """
+    Represents a stock in the simulation environment, used for backtesting.
+    """
     def __init__(self, stock_name, barrier, init_money):
-        super().__init__(stock_name, barrier,init_money)
+        super().__init__(stock_name, barrier, init_money)
         self.minutes_per_day = list()
         self.date = ''
         self.flag_enter_status_rec = False
@@ -262,7 +320,7 @@ class Demo_Stock_Object(Stock_Object):
         self.flag_amount_list_rec = True
         self.accumulated_amount_no_gap = 0
         self.accumulated_amount_limit = 0
-        self.avg_volume=0
+        self.avg_volume = 0
         self.max_amount = 0
         self.min_per_day = 0
         self.counter = 0
@@ -1009,7 +1067,17 @@ def binary_tree_search(list_search, val):
         return size_2 + binary_tree_search(list_search[size_2:], val)
 
 
-def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
+def simulate_trading_local_data(stock_object: Demo_Stock_Object, day_num):
+    """
+    The main simulation loop for a single stock on a given day.
+
+    This function is executed in a separate thread for each stock. It simulates
+    the trading strategy on a minute-by-minute basis using historical data.
+
+    Args:
+        stock_object (Demo_Stock_Object): The stock object to simulate.
+        day_num (int): The index of the day to simulate.
+    """
     if stock_object.stock_name == glb.job_by_one_thread:
         glb.current_date = glb.stocks_data[stock_object.stock_name]['dates'][day_num]
         if glb.dbg_on_real_data:
@@ -1024,14 +1092,16 @@ def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
     current_list_day = np.array(stock_object.real_avg_list[-1])
     num_of_elements_in_data = len(avg_list_day)
     with key_lock:
-        glb.min_num_of_time_stamp_in_stocks_current_day = min(glb.min_num_of_time_stamp_in_stocks_current_day,num_of_elements_in_data)
+        glb.min_num_of_time_stamp_in_stocks_current_day = min(glb.min_num_of_time_stamp_in_stocks_current_day,
+                                                              num_of_elements_in_data)
     stock_object.barrier.wait()
     start_accumulated_amount_limit = 0
     if not stock_object.flag_first_day:
         gap = stock_object.real_avg_list[-1][0] - stock_object.real_avg_list[-2][-1]
         stock_object.minutes_per_day.append(num_of_elements_in_data + stock_object.minutes_per_day[-1])
         stock_object.gaps_list.append(gap)
-        stock_object.accumulated_amount = stock_object.amount_list[-1] + gap if stock_object.flag_enter_status else stock_object.amount_list[-1]
+        stock_object.accumulated_amount = stock_object.amount_list[-1] + gap if stock_object.flag_enter_status else \
+        stock_object.amount_list[-1]
         stock_object.start_accumulated_amount = stock_object.accumulated_amount
         stock_object.amount_limit_num = 0
         start_accumulated_amount_limit = stock_object.accumulated_amount_limit
@@ -1050,7 +1120,6 @@ def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
     else:
         volume_list = stock_object.real_volume_list[-1]
 
-
     # avg_list_day_ago = list(np.array(avg_list_day_ago) + avg_list_day[0] - avg_list_day_ago[-1])
     # combine_avg = np.array(avg_list_day_ago + list(avg_list_day))
     # combine_time_stamp_start = len(avg_list_day_ago)
@@ -1060,21 +1129,23 @@ def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
 
         #### request market data ###
         # price = avg_list_day[time_stamp] #real: get stock last price
-        price = current_list_day[time_stamp] #real: get stock last price
+        price = current_list_day[time_stamp]  # real: get stock last price
         if not stock_object.flag_first_day:
-            last_volume_list = sorted(volume_list[(-num_of_elements_in_data+time_stamp-380):(-num_of_elements_in_data+time_stamp)])
-            lower_half_volume = last_volume_list[:len(last_volume_list)//2]
-            stock_object.avg_volume = sum(lower_half_volume)/len(lower_half_volume)
+            last_volume_list = sorted(
+                volume_list[(-num_of_elements_in_data + time_stamp - 380):(-num_of_elements_in_data + time_stamp)])
+            lower_half_volume = last_volume_list[:len(last_volume_list) // 2]
+            stock_object.avg_volume = sum(lower_half_volume) / len(lower_half_volume)
         elif glb.dbg_on_real_data:
             last_volume_list = sorted(volume_list)
             lower_half_volume = last_volume_list[:len(last_volume_list) // 2]
             stock_object.avg_volume = sum(lower_half_volume) / len(lower_half_volume)
         else:
-            stock_object.avg_volume= sum(volume_list[:time_stamp+1])/(time_stamp+1)
+            stock_object.avg_volume = sum(volume_list[:time_stamp + 1]) / (time_stamp + 1)
 
         #### i think this part should be in the end of the minute ####
-        if stock_object.flag_first_day and time_stamp == 0 and time_stamp < glb.min_num_of_time_stamp_in_stocks_current_day:#time_stamp % 5 == 0 and
-            stock_object.check_real_invest_in_the_stock_and_action(SA.Collect_divide_again,time_stamp) #### real: no needed
+        if stock_object.flag_first_day and time_stamp == 0 and time_stamp < glb.min_num_of_time_stamp_in_stocks_current_day:  # time_stamp % 5 == 0 and
+            stock_object.check_real_invest_in_the_stock_and_action(SA.Collect_divide_again,
+                                                                    time_stamp)  #### real: no needed
             stock_object.break_point_to_divide_the_real_money_between_stocks(time_stamp)
 
         if stock_object.accumulated_amount > stock_object.max_amount:
@@ -1091,14 +1162,17 @@ def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
         # 43814%-1->2800%-2->53426%-0.5
         # 28190%->0
         stock_object.analyze_the_histogram_and_set_the_next_action(avg_list_day, time_stamp, price)
-        stock_interval_change = round((float(avg_list_day[time_stamp]-avg_list_day[time_stamp-1])),2) if time_stamp>0 else 0
+        stock_interval_change = round((float(avg_list_day[time_stamp] - avg_list_day[time_stamp - 1])),
+                                      2) if time_stamp > 0 else 0
 
         #### this part need to change to order requests ####
-        stock_object.simulate_the_next_trade(price,stock_interval_change,time_stamp)
-        stock_object.Safe_Limit_condition_stock_trade_5(price,time_stamp,stock_interval_change)
+        stock_object.simulate_the_next_trade(price, stock_interval_change, time_stamp)
+        stock_object.Safe_Limit_condition_stock_trade_5(price, time_stamp, stock_interval_change)
 
         #### this will help me devide the money with the potntial stocks ####
-        stock_object.accumulated_amount_percentage_day = 100*(stock_object.accumulated_amount_limit-start_accumulated_amount_limit)/stock_object.real_avg_list[0][0]
+        stock_object.accumulated_amount_percentage_day = 100 * (
+                    stock_object.accumulated_amount_limit - start_accumulated_amount_limit) / \
+                                                          stock_object.real_avg_list[0][0]
         # stock_object.accumulated_amount_percentage_day = 100*(stock_object.accumulated_amount-stock_object.start_accumulated_amount)/stock_object.real_avg_list[0][0]
 
         #### collect statistic data ####
@@ -1106,12 +1180,11 @@ def simulate_trading_local_data(stock_object: Demo_Stock_Object,day_num):
         stock_object.amount_list_no_gap.append(stock_object.accumulated_amount_no_gap)
         stock_object.amount_limit.append(stock_object.accumulated_amount_limit)
 
-
         # stock_object.pull_spare_money()
         stock_object.counter += 1
         # print(stock_object.stock_name+' time_stamp:'+str(time_stamp))
 
-        if time_stamp<glb.min_num_of_time_stamp_in_stocks_current_day:
+        if time_stamp < glb.min_num_of_time_stamp_in_stocks_current_day:
             glb.day_barrier.wait()
 
     #### 1 min before end of the day close postion ###

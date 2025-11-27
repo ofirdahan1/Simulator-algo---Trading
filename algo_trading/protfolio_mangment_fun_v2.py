@@ -1,3 +1,12 @@
+"""
+Portfolio Management and Trading Session Orchestration.
+
+This module is the central controller for the trading application. It is responsible for:
+- Initializing the portfolio and stock data.
+- Managing the main trading loop and the lifecycle of individual stock threads.
+- Orchestrating the start and end of the trading day.
+- Generating final performance reports and plots.
+"""
 import os
 import time
 import copy
@@ -11,6 +20,12 @@ import globals_v2 as glb
 import datetime as dt
 
 def fill_stock_1D_previous_data(stock):
+    """
+    Fetches the previous day's historical data for a given stock.
+
+    Args:
+        stock (str): The stock symbol.
+    """
     stock_data = {'open':[],'close':[],'avg':[],'volume':[],'dates':[],'last_price':float(0)}
     with glb.key_lock_stocks_data:
         glb.stocks_data.update({stock:stock_data})
@@ -31,6 +46,12 @@ def fill_stock_1D_previous_data(stock):
     glb.demo_portfolio_treads[stock].avg_volume = sum(lower_half_volume) / len(lower_half_volume)
 
 def fill_stocks_data(stocks_list):
+    """
+    Initializes and fetches historical data for all stocks in the portfolio.
+
+    Args:
+        stocks_list (list): A list of stock symbols.
+    """
     threads = []
     for idx, stock in enumerate(stocks_list):
         threads.append(threading.Thread(target=glb.client.add_stock_to_stock_list, args=(stock,)))
@@ -44,12 +65,21 @@ def fill_stocks_data(stocks_list):
     for idx, stock in enumerate(stocks_list):
         threads[idx].join()
 def fill_portfolio_dict(stocks_list):
+    """
+    Initializes the portfolio dictionaries with stock objects.
+
+    Args:
+        stocks_list (list): A list of stock symbols.
+    """
     barrier = threading.Barrier(len(stocks_list))
     glb.day_barrier = threading.Barrier(len(stocks_list))
     for stock in stocks_list:
         glb.demo_portfolio_treads.update({stock: glb.Demo_Stock_Object(stock, barrier, glb.my_init_demo_available_money_dollar)})
         update_my_portfolio_files(stock,0,0)
 def write_to_real_log_info():
+    """
+    Writes the final trading logs and performance summary to text and Excel files.
+    """
     import  csv
     import pandas as pd
     if not os.path.isdir(glb.PATH_RESULTS):
@@ -90,6 +120,13 @@ def write_to_real_log_info():
             writer.close()
 
 def plotting_stocks_summary(start, end):
+    """
+    Generates and saves performance plots for each stock.
+
+    Args:
+        start (str): The start date of the simulation.
+        end (str): The end date of the simulation.
+    """
     init_money = (glb.my_available_money_dollar_start-500)/len(glb.my_portfolio)
     for stock_name in glb.my_portfolio:
         # glb.my_portfolio[stock_name].real_sell_shears(glb.demo_portfolio_treads[stock_name].real_avg_list[-1],-1,99999999999)#max volume to sell all
@@ -103,6 +140,9 @@ def plotting_stocks_summary(start, end):
         glb.demo_portfolio_treads[stock_object].plotting_all_data(start, end)
 
 def checking_if_continue_or_stop():
+    """
+    Checks a status file to see if the trading session should be stopped manually.
+    """
     file_path = '/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result/run_status.txt'
     flag = False
     with open(file_path, 'r') as file:
@@ -116,11 +156,17 @@ def checking_if_continue_or_stop():
         with open(file_path, 'w') as f:
             f.write('end')
 def create_continue_or_stop_file():
+    """
+    Creates the status file used for manual intervention.
+    """
     file_path = '/Users/ofirdahan/Desktop/interactive brokers/stock_analyzer/paper_trading_data_result/run_status.txt'
     with open(file_path, 'w') as f:
         f.write('to stop write the num one.')
 
 def time_clock_update_thread():
+    """
+    The main clock thread that synchronizes the application on a per-minute basis.
+    """
     counter = 0
     divide_available_money(counter)
     diff_time = glb.time_start_of_trading_day - dt.datetime.now()
@@ -175,6 +221,12 @@ def time_clock_update_thread():
     #     time.sleep(10)
 
 def trade_and_update_portfolio_local_data(stocks_list):
+    """
+    The main function to orchestrate the trading session.
+
+    Args:
+        stocks_list (list): A list of stock symbols to trade.
+    """
     # import necessary packages
     from dateutil import rrule
     current_time = dt.datetime.now()

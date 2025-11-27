@@ -4,6 +4,8 @@
 
 This project contains a comprehensive algorithmic trading system written in Python. It is divided into two main components: a live/paper trading bot and a backtesting simulator. The system is designed to trade stocks using a momentum-based strategy, with capabilities for both real-world execution and historical performance analysis.
 
+This project was developed over several months in 2024 as a personal endeavor to explore algorithmic trading. While the strategies implemented here have not been proven to be consistently profitable, the codebase serves as a practical example of a trading bot architecture. The core logic was manually coded, with AI assistance used solely for generating documentation in the end of 2025 to improve readability for other developers.
+
 ## Project Components
 
 This repository is organized into two primary directories:
