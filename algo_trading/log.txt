@@ -1,0 +1,1377 @@
+23:12:20
+23:12:20 req_id: -1 Error 2104: Market data farm connection is OK:usfarm.nj
+23:12:20 req_id: -1 Error 2104: Market data farm connection is OK:cashfarm
+23:12:20 req_id: -1 Error 2104: Market data farm connection is OK:usfarm
+23:12:20 req_id: -1 Error 2106: HMDS data farm connection is OK:euhmds
+23:12:20 req_id: -1 Error 2106: HMDS data farm connection is OK:fundfarm
+23:12:20 req_id: -1 Error 2106: HMDS data farm connection is OK:ushmds
+23:12:20 req_id: -1 Error 2158: Sec-def data farm connection is OK:secdefil
+23:12:21 reqId group:10 ,adding stock:TQQQ to stock list
+23:12:21 reqId group:20 ,adding stock:TSLA to stock list
+23:12:21 reqId group:30 ,adding stock:GOOG to stock list
+23:12:21 reqId group:40 ,adding stock:NVDA to stock list
+23:12:21 reqId group:50 ,adding stock:AAPL to stock list
+23:12:21 reqId group:60 ,adding stock:MSTR to stock list
+23:12:21 reqId 40: added to the reqId list
+23:12:21 reqId 10: added to the reqId list
+23:12:21 reqId 20: added to the reqId list
+23:12:21 reqId 30: added to the reqId list
+23:12:21 reqId 50: added to the reqId list
+23:12:21 reqId 60: added to the reqId list
+23:12:21 reqId:40 request historicalData
+23:12:21 reqId:10 request historicalData
+23:12:21 reqId:20 request historicalData
+23:12:21 reqId:30 request historicalData
+23:12:21 reqId:50 request historicalData
+23:12:21 reqId:60 request historicalData
+23:12:22 REMOVE: reqId 0,and canceled stock NVDA HistoricalMktData
+23:12:22 reqId:40, end historical data of NVDA data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:22 remove reqId 10,canceled stock TQQQ
+23:12:22 reqId:10, end historical data of TQQQ data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:22 REMOVE: reqId 0,and canceled stock GOOG HistoricalMktData
+23:12:22 reqId:30, end historical data of GOOG data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:22 REMOVE: reqId 0,and canceled stock TSLA HistoricalMktData
+23:12:22 reqId:20, end historical data of TSLA data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:22 REMOVE: reqId 0,and canceled stock MSTR HistoricalMktData
+23:12:22 reqId:60, end historical data of MSTR data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:22 REMOVE: reqId 0,and canceled stock AAPL HistoricalMktData
+23:12:22 reqId:50, end historical data of AAPL data 20240929 16:12:21 US/Eastern 20240930 16:12:21 US/Eastern
+23:12:23 DIVIDE: conter' 0
+23:12:23 reqId 1: added to the reqId list
+23:12:23 account:DU8919527 key:CashBalance value:1024194.464 currency:USD account update
+23:12:23 account:DU8919527 key:TotalCashBalance value:1024194.464 currency:USD account update
+23:12:23 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.08000185 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:37.71 AccountName:DU8919527
+23:12:23 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.8999939 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:52.93 AccountName:DU8919527
+23:12:23 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:0.0 MarketPrice:169.0299988 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-214.04 AccountName:DU8919527
+23:12:23 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51000215 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:124.05 AccountName:DU8919527
+23:12:23 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-78.39 AccountName:DU8919527
+23:12:23 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.98999025 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:49.49 AccountName:DU8919527
+23:12:24 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1024194.46, BuyingPower:4096777.86, CashBalance:1024194.464, NetLiquidation:1027614.36, TotalCashBalance:1024194.464
+23:12:24 DIVIDE: TQQQ,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 DIVIDE: TSLA,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 DIVIDE: GOOG,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 DIVIDE: NVDA,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 REMOVE: reqId 1,and canceled account streaming DATA
+23:12:24 DIVIDE: AAPL,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:12:24 DIVIDE: MSTR,stock net: 16583.33, new invest:0,ratio from start: 0.17
+23:12:24 reqId 31: added to the reqId list
+23:12:24 reqId 41: added to the reqId list
+23:12:24 reqId 11: added to the reqId list
+23:12:24 reqId 21: added to the reqId list
+23:12:24 reqId 51: added to the reqId list
+23:12:24 reqId 61: added to the reqId list
+23:12:24 reqId: 31 symbol GOOG ,request mkt data
+23:12:24 reqId: 41 symbol NVDA ,request mkt data
+23:12:24 reqId: 11 symbol TQQQ ,request mkt data
+23:12:24 reqId: 21 symbol TSLA ,request mkt data
+23:12:24 reqId: 51 symbol AAPL ,request mkt data
+23:12:24 reqId: 61 symbol MSTR ,request mkt data
+23:12:25 req 31 stock GOOG request mkt data activate
+23:12:25 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:12:25 GOOG, lable LAST_PRICE new val:166.92 ,the limit sets to 0 the next will be 0.0
+23:12:25 LOGIC: try BUY 99 shears for GOOG
+23:12:25 req 41 stock NVDA request mkt data activate
+23:12:25 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:12:25 NVDA, lable LAST_PRICE new val:121.51 ,the limit sets to 0 the next will be 0.0
+23:12:25 LOGIC: try BUY 136 shears for NVDA
+23:12:25 req 11 stock TQQQ request mkt data activate
+23:12:25 req 21 stock TSLA request mkt data activate
+23:12:25 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:12:25 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:12:25 TQQQ, lable LAST_PRICE new val:72.27 ,the limit sets to 0 the next will be 0.0
+23:12:25 TSLA, lable LAST_PRICE new val:262.0 ,the limit sets to 0 the next will be 0.0
+23:12:25 LOGIC: try BUY 229 shears for TQQQ
+23:12:25 LOGIC: try BUY 63 shears for TSLA
+23:12:25 req 51 stock AAPL request mkt data activate
+23:12:25 req 61 stock MSTR request mkt data activate
+23:12:25 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:12:25 AAPL, lable LAST_PRICE new val:233.05 ,the limit sets to 0 the next will be 0.0
+23:12:25 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:12:25 LOGIC: try BUY 71 shears for AAPL
+23:12:25 MSTR, lable LAST_PRICE new val:169.0 ,the limit sets to 0 the next will be 0.0
+23:12:25 LOGIC: try BUY 98 shears for MSTR
+23:12:25 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:12:25 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:12:25 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:12:25 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:12:25 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:12:25 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:12:25 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:12:25 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:12:25 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:12:25 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:12:26 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:12:26 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:12:27 reqId 31: added to the reqId list
+23:12:27 reqId: 31 symbol GOOG ,request mkt data
+23:12:27 reqId 41: added to the reqId list
+23:12:27 reqId: 41 symbol NVDA ,request mkt data
+23:12:27 req 31 stock GOOG request mkt data activate
+23:12:27 reqId:701 ,symbol:GOOG ,action:BUY ,amount:99 ,last price:166.92 ,ordLimitPr: 166.97 ,ASK: 166.9 ,place BUY order
+23:12:27 reqId 11: added to the reqId list
+23:12:27 reqId: 11 symbol TQQQ ,request mkt data
+23:12:27 reqId 21: added to the reqId list
+23:12:27 reqId: 21 symbol TSLA ,request mkt data
+23:12:27 req 41 stock NVDA request mkt data activate
+23:12:27 reqId 61: added to the reqId list
+23:12:27 reqId 51: added to the reqId list
+23:12:27 req 11 stock TQQQ request mkt data activate
+23:12:27 reqId:702 ,symbol:NVDA ,action:BUY ,amount:136 ,last price:121.52 ,ordLimitPr: 121.59 ,ASK: 121.54 ,place BUY order
+23:12:27 reqId: 61 symbol MSTR ,request mkt data
+23:12:27 reqId: 51 symbol AAPL ,request mkt data
+23:12:27 reqId:703 ,symbol:TQQQ ,action:BUY ,amount:229 ,last price:72.27 ,ordLimitPr: 72.3 ,ASK: 72.27 ,place BUY order
+23:12:27 req 21 stock TSLA request mkt data activate
+23:12:27 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.02 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:27 req 61 stock MSTR request mkt data activate
+23:12:27 req 51 stock AAPL request mkt data activate
+23:12:27 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:27 Order ID=701 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:27 Order ID=701 Status Update: Status=Submitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 reqId:706 ,symbol:AAPL ,action:BUY ,amount:71 ,last price:233.05 ,ordLimitPr: 233.17 ,ASK: 233.08 ,place BUY order
+23:12:28 Order ID=702 Status Update: Status=PreSubmitted, Filled=0, Remaining=136, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=703 Status Update: Status=PreSubmitted, Filled=0, Remaining=229, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=702 Status Update: Status=PreSubmitted, Filled=0, Remaining=136, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=702 Status Update: Status=Filled, Filled=136, Remaining=0, Avg Fill Price=121.54, Last Fill Price=121.54, Client ID=1, Why Held=
+23:12:28 ordId 702 removed, stock NVDA action BUY filled 136 in avg price 121.54 and wanted price was 121.51
+23:12:28 Order ID=703 Status Update: Status=PreSubmitted, Filled=0, Remaining=229, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=703 Status Update: Status=Filled, Filled=229, Remaining=0, Avg Fill Price=72.27, Last Fill Price=72.27, Client ID=1, Why Held=
+23:12:28 ordId 703 removed, stock TQQQ action BUY filled 229 in avg price 72.27 and wanted price was 72.27
+23:12:28 Order ID=702 Status Update: Status=Filled, Filled=136, Remaining=0, Avg Fill Price=121.54, Last Fill Price=121.54, Client ID=1, Why Held=
+23:12:28 ordId: 702, NVDA execDetails: BOT of 136 in price of 121.54 with commission of 1.007072 .[USD]
+23:12:28 Order ID=703 Status Update: Status=Filled, Filled=229, Remaining=0, Avg Fill Price=72.27, Last Fill Price=72.27, Client ID=1, Why Held=
+23:12:28 ordId: 703, TQQQ execDetails: BOT of 229 in price of 72.27 with commission of 1.156908 .[USD]
+23:12:28 reqId:701 ,symbol:GOOG ,action:BUY ,amount:99 ,last price:166.92 ,ordLimitPr: 166.97 ,ASK: 166.9 ,place BUY order
+23:12:28 Order ID=704 Status Update: Status=PreSubmitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=701 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=701 Status Update: Status=Submitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=706 Status Update: Status=PreSubmitted, Filled=0, Remaining=71, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=706 Status Update: Status=PreSubmitted, Filled=0, Remaining=71, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:28 Order ID=706 Status Update: Status=Filled, Filled=71, Remaining=0, Avg Fill Price=233.08, Last Fill Price=233.08, Client ID=1, Why Held=
+23:12:28 ordId 706 removed, stock AAPL action BUY filled 71 in avg price 233.08 and wanted price was 233.05
+23:12:28 Order ID=706 Status Update: Status=Filled, Filled=71, Remaining=0, Avg Fill Price=233.08, Last Fill Price=233.08, Client ID=1, Why Held=
+23:12:28 ordId: 706, AAPL execDetails: BOT of 71 in price of 233.08 with commission of 1.003692 .[USD]
+23:12:28 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:12:28 FINISH BUY LOGIC : status SUCCESS ,time 3.3848531246185303[sec]
+23:12:28 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:12:28 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:12:28 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:12:28 FINISH BUY LOGIC : status SUCCESS ,time 3.314171075820923[sec]
+23:12:28 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.0 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:28 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:12:28 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:12:28 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:29 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:12:29 FINISH BUY LOGIC : status SUCCESS ,time 3.483686923980713[sec]
+23:12:29 Order ID=704 Status Update: Status=PreSubmitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:29 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:29 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:12:29 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:12:29 Order ID=701 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.9, Last Fill Price=166.9, Client ID=1, Why Held=
+23:12:29 ordId 701 removed, stock GOOG action BUY filled 99 in avg price 166.9 and wanted price was 166.92
+23:12:29 Order ID=701 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.9, Last Fill Price=166.9, Client ID=1, Why Held=
+23:12:29 ordId: 701, GOOG execDetails: BOT of 99 in price of 166.9 with commission of 1.005148 .[USD]
+23:12:29 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:12:29 FINISH BUY LOGIC : status SUCCESS ,time 4.203409194946289[sec]
+23:12:29 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:29 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:29 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:12:29 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:12:29 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.0 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:29 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:29 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:30 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:30 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:30 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:30 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.0 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:30 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:30 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.0 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:31 Order ID=704 Status Update: Status=PreSubmitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 Order ID=704 Status Update: Status=Submitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:31 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:32 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:32 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:32 reqId:704 ,symbol:TSLA ,action:BUY ,amount:63 ,last price:262.0 ,ordLimitPr: 262.18 ,ASK: 262.08 ,place BUY order
+23:12:32 Order ID=704 Status Update: Status=PendingSubmit, Filled=63, Remaining=0, Avg Fill Price=262.05, Last Fill Price=262.05, Client ID=1, Why Held=
+23:12:32 Order ID=704 Status Update: Status=Filled, Filled=63, Remaining=0, Avg Fill Price=262.05, Last Fill Price=262.05, Client ID=1, Why Held=
+23:12:32 ordId 704 removed, stock TSLA action BUY filled 63 in avg price 262.05 and wanted price was 262.0
+23:12:33 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:33 req_id: 704 Error 201: Order rejected - reason:Order is already filled
+23:12:33 Order ID=704 Status Update: Status=Filled, Filled=63, Remaining=0, Avg Fill Price=262.05, Last Fill Price=262.05, Client ID=1, Why Held=
+23:12:33 Order ID=704 Status Update: Status=Filled, Filled=63, Remaining=0, Avg Fill Price=262.05, Last Fill Price=262.05, Client ID=1, Why Held=
+23:12:33 ordId: 704, TSLA execDetails: BOT of 63 in price of 262.05 with commission of 1.003276 .[USD]
+23:12:33 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:33 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:33 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:12:33 FINISH BUY LOGIC : status SUCCESS ,time 8.395550012588501[sec]
+23:12:33 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:12:33 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:12:34 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:34 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:34 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:35 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:35 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:35 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:36 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:36 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:36 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:37 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:37 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:37 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:38 reqId:705 ,symbol:MSTR ,action:BUY ,amount:98 ,last price:169.0 ,ordLimitPr: 169.22 ,ASK: 169.15 ,place BUY order
+23:12:38 Order ID=705 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:38 Order ID=705 Status Update: Status=Submitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:12:38 Order ID=705 Status Update: Status=Filled, Filled=98, Remaining=0, Avg Fill Price=169.13, Last Fill Price=169.13, Client ID=1, Why Held=
+23:12:38 ordId 705 removed, stock MSTR action BUY filled 98 in avg price 169.13 and wanted price was 169.0
+23:12:38 Order ID=705 Status Update: Status=Filled, Filled=98, Remaining=0, Avg Fill Price=169.13, Last Fill Price=169.13, Client ID=1, Why Held=
+23:12:38 ordId: 705, MSTR execDetails: BOT of 98 in price of 169.13 with commission of 1.005096 .[USD]
+23:12:39 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:12:39 FINISH BUY LOGIC : status SUCCESS ,time 13.471903324127197[sec]
+23:12:39 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:12:39 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:13:00 reqId 51: added to the reqId list
+23:13:00 reqId 41: added to the reqId list
+23:13:00 reqId 11: added to the reqId list
+23:13:00 reqId 31: added to the reqId list
+23:13:00 reqId 61: added to the reqId list
+23:13:00 reqId 21: added to the reqId list
+23:13:00 reqId: 51 symbol AAPL ,request mkt data
+23:13:00 reqId: 41 symbol NVDA ,request mkt data
+23:13:00 reqId: 11 symbol TQQQ ,request mkt data
+23:13:00 reqId: 31 symbol GOOG ,request mkt data
+23:13:00 reqId: 61 symbol MSTR ,request mkt data
+23:13:00 reqId: 21 symbol TSLA ,request mkt data
+23:13:00 req 51 stock AAPL request mkt data activate
+23:13:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:13:00 AAPL, lable LAST_PRICE new val:233.05 ,the limit sets to 233.05 the next will be 234.21525
+23:13:00 req 41 stock NVDA request mkt data activate
+23:13:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:13:00 NVDA, lable LAST_PRICE new val:121.5 ,the limit sets to 121.51 the next will be 122.11755
+23:13:00 LOGIC: try SELL 136.0 shears for NVDA
+23:13:00 req 31 stock GOOG request mkt data activate
+23:13:00 req 11 stock TQQQ request mkt data activate
+23:13:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:13:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:13:00 GOOG, lable LAST_PRICE new val:166.8 ,the limit sets to 166.92 the next will be 167.75459999999998
+23:13:00 TQQQ, lable LAST_PRICE new val:72.25 ,the limit sets to 72.27 the next will be 72.63134999999998
+23:13:00 LOGIC: try SELL 99.0 shears for GOOG
+23:13:00 LOGIC: try SELL 229.0 shears for TQQQ
+23:13:00 req 61 stock MSTR request mkt data activate
+23:13:00 req 21 stock TSLA request mkt data activate
+23:13:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:13:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:13:00 MSTR, lable LAST_PRICE new val:169.0 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:13:00 TSLA, lable LAST_PRICE new val:262.0 ,the limit sets to 262.0 the next will be 263.30999999999995
+23:13:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:13:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:13:00 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:13:00 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:13:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:13:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:13:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:13:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:13:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:13:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:13:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:13:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:13:02 reqId 41: added to the reqId list
+23:13:02 reqId: 41 symbol NVDA ,request mkt data
+23:13:02 reqId 31: added to the reqId list
+23:13:02 reqId 11: added to the reqId list
+23:13:02 reqId: 31 symbol GOOG ,request mkt data
+23:13:02 reqId: 11 symbol TQQQ ,request mkt data
+23:13:02 req 41 stock NVDA request mkt data activate
+23:13:02 req 31 stock GOOG request mkt data activate
+23:13:02 reqId:707 ,symbol:NVDA ,action:SELL ,amount:136.0 ,last price:121.5 ,ordLimitPr: 121.45 ,BID: 121.5 ,place SELL order
+23:13:02 reqId:708 ,symbol:GOOG ,action:SELL ,amount:99.0 ,last price:166.8 ,ordLimitPr: 166.73 ,BID: 166.8 ,place SELL order
+23:13:02 req 11 stock TQQQ request mkt data activate
+23:13:02 reqId:709 ,symbol:TQQQ ,action:SELL ,amount:229.0 ,last price:72.25 ,ordLimitPr: 72.22 ,BID: 72.25 ,place SELL order
+23:13:03 Order ID=707 Status Update: Status=PreSubmitted, Filled=0, Remaining=136, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=708 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=707 Status Update: Status=PreSubmitted, Filled=0, Remaining=136, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=707 Status Update: Status=Filled, Filled=136, Remaining=0, Avg Fill Price=121.5, Last Fill Price=121.5, Client ID=1, Why Held=
+23:13:03 ordId 707 removed, stock NVDA action SELL filled 136 in avg price 121.5 and wanted price was 121.5
+23:13:03 Order ID=708 Status Update: Status=Submitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=708 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.8, Last Fill Price=166.8, Client ID=1, Why Held=
+23:13:03 ordId 708 removed, stock GOOG action SELL filled 99 in avg price 166.8 and wanted price was 166.8
+23:13:03 Order ID=707 Status Update: Status=Filled, Filled=136, Remaining=0, Avg Fill Price=121.5, Last Fill Price=121.5, Client ID=1, Why Held=
+23:13:03 ordId: 707, NVDA execDetails: SLD of 136 in price of 121.5 with commission of 1.489015 .[USD]
+23:13:03 Order ID=708 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.8, Last Fill Price=166.8, Client ID=1, Why Held=
+23:13:03 ordId: 708, GOOG execDetails: SLD of 99 in price of 166.8 with commission of 1.480649 .[USD]
+23:13:03 Order ID=709 Status Update: Status=PreSubmitted, Filled=0, Remaining=229, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=709 Status Update: Status=PreSubmitted, Filled=0, Remaining=229, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:13:03 Order ID=709 Status Update: Status=Filled, Filled=229, Remaining=0, Avg Fill Price=72.25, Last Fill Price=72.25, Client ID=1, Why Held=
+23:13:03 ordId 709 removed, stock TQQQ action SELL filled 229 in avg price 72.25 and wanted price was 72.25
+23:13:03 Order ID=709 Status Update: Status=Filled, Filled=229, Remaining=0, Avg Fill Price=72.25, Last Fill Price=72.25, Client ID=1, Why Held=
+23:13:03 ordId: 709, TQQQ execDetails: SLD of 229 in price of 72.25 with commission of 1.65488 .[USD]
+23:13:03 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:13:03 FINISH SELL LOGIC : status SUCCESS ,time 3.3938329219818115[sec]
+23:13:03 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:13:03 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:13:03 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:13:03 FINISH SELL LOGIC : status SUCCESS ,time 3.320866107940674[sec]
+23:13:03 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:13:03 FINISH SELL LOGIC : status SUCCESS ,time 3.3661508560180664[sec]
+23:13:03 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:13:03 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:13:04 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:13:04 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:13:53 DIVIDE: conter' 1
+23:13:53 reqId 1: added to the reqId list
+23:13:53 account:DU8919527 key:CashBalance value:974531.1683 currency:USD account update
+23:13:53 account:DU8919527 key:TotalCashBalance value:974531.1683 currency:USD account update
+23:13:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:71.0 MarketPrice:233.05000305 MarketValue:16546.55 AverageCost:233.0941365 UnrealizedPNL:-3.13 RealizedPNL:37.71 AccountName:DU8919527
+23:13:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.8999939 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:40.55 AccountName:DU8919527
+23:13:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.0299988 MarketValue:16564.94 AverageCost:169.1402561 UnrealizedPNL:-10.81 RealizedPNL:-214.04 AccountName:DU8919527
+23:13:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51000215 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:13:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26000215 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:13:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:63.0 MarketPrice:261.98999025 MarketValue:16505.37 AverageCost:262.065925 UnrealizedPNL:-4.78 RealizedPNL:49.49 AccountName:DU8919527
+23:13:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:993044.77, BuyingPower:3972179.09, CashBalance:974531.1683, NetLiquidation:1027567.93, TotalCashBalance:974531.1683
+23:13:54 DIVIDE: MSTR,stock net: 16572.524904, new invest:0,ratio from start: 0.17
+23:13:54 DIVIDE: AAPL,stock net: 16580.196308000002, new invest:0,ratio from start: 0.17
+23:13:54 DIVIDE: TSLA,stock net: 16578.546724, new invest:0,ratio from start: 0.17
+23:13:54 DIVIDE: GOOG,stock net: 16570.944203, new invest:0,ratio from start: 0.17
+23:13:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:1,ratio from start: 0.17
+23:13:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0,ratio from start: 0.17
+23:13:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:13:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:14:00 reqId 51: added to the reqId list
+23:14:00 reqId 41: added to the reqId list
+23:14:00 reqId 61: added to the reqId list
+23:14:00 reqId 11: added to the reqId list
+23:14:00 reqId 21: added to the reqId list
+23:14:00 reqId 31: added to the reqId list
+23:14:00 reqId: 51 symbol AAPL ,request mkt data
+23:14:00 reqId: 41 symbol NVDA ,request mkt data
+23:14:00 reqId: 61 symbol MSTR ,request mkt data
+23:14:00 reqId: 11 symbol TQQQ ,request mkt data
+23:14:00 reqId: 21 symbol TSLA ,request mkt data
+23:14:00 reqId: 31 symbol GOOG ,request mkt data
+23:14:00 req 51 stock AAPL request mkt data activate
+23:14:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:14:00 AAPL, lable LAST_PRICE new val:233.04 ,the limit sets to 233.05 the next will be 234.21525
+23:14:00 LOGIC: try SELL 71.0 shears for AAPL
+23:14:00 req 41 stock NVDA request mkt data activate
+23:14:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:14:00 req 61 stock MSTR request mkt data activate
+23:14:00 NVDA, lable LAST_PRICE new val:121.51 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:14:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:14:00 MSTR, lable LAST_PRICE new val:169.09 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:14:00 req 11 stock TQQQ request mkt data activate
+23:14:00 req 21 stock TSLA request mkt data activate
+23:14:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:14:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:14:00 TQQQ, lable LAST_PRICE new val:72.25 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:14:00 TSLA, lable LAST_PRICE new val:261.84 ,the limit sets to 262.0 the next will be 263.30999999999995
+23:14:00 LOGIC: try SELL 63.0 shears for TSLA
+23:14:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:14:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:14:00 req 31 stock GOOG request mkt data activate
+23:14:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:14:00 GOOG, lable LAST_PRICE new val:166.8 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:14:00 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:14:00 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:14:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:14:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:14:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:14:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:14:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:14:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:14:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:14:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:14:02 reqId 51: added to the reqId list
+23:14:02 reqId: 51 symbol AAPL ,request mkt data
+23:14:02 req 51 stock AAPL request mkt data activate
+23:14:02 reqId:710 ,symbol:AAPL ,action:SELL ,amount:71.0 ,last price:233.09 ,ordLimitPr: 232.91 ,BID: 233.0 ,place SELL order
+23:14:02 reqId 21: added to the reqId list
+23:14:02 reqId: 21 symbol TSLA ,request mkt data
+23:14:02 req 21 stock TSLA request mkt data activate
+23:14:02 reqId:711 ,symbol:TSLA ,action:SELL ,amount:63.0 ,last price:261.87 ,ordLimitPr: 261.7 ,BID: 261.8 ,place SELL order
+23:14:02 Order ID=710 Status Update: Status=PreSubmitted, Filled=0, Remaining=71, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:14:02 Order ID=710 Status Update: Status=PreSubmitted, Filled=0, Remaining=71, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:14:02 Order ID=710 Status Update: Status=Filled, Filled=71, Remaining=0, Avg Fill Price=233.0, Last Fill Price=233.0, Client ID=1, Why Held=
+23:14:02 ordId 710 removed, stock AAPL action SELL filled 71 in avg price 233.0 and wanted price was 233.04
+23:14:02 Order ID=710 Status Update: Status=Filled, Filled=71, Remaining=0, Avg Fill Price=233.0, Last Fill Price=233.0, Client ID=1, Why Held=
+23:14:02 ordId: 710, AAPL execDetails: SLD of 71 in price of 233.0 with commission of 1.475373 .[USD]
+23:14:03 Order ID=711 Status Update: Status=PreSubmitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:14:03 Order ID=711 Status Update: Status=PreSubmitted, Filled=0, Remaining=63, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:14:03 Order ID=711 Status Update: Status=Filled, Filled=63, Remaining=0, Avg Fill Price=261.82, Last Fill Price=261.82, Client ID=1, Why Held=
+23:14:03 ordId 711 removed, stock TSLA action SELL filled 63 in avg price 261.82 and wanted price was 261.84
+23:14:03 Order ID=711 Status Update: Status=Filled, Filled=63, Remaining=0, Avg Fill Price=261.82, Last Fill Price=261.82, Client ID=1, Why Held=
+23:14:03 ordId: 711, TSLA execDetails: SLD of 63 in price of 261.82 with commission of 1.472286 .[USD]
+23:14:03 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:14:03 FINISH SELL LOGIC : status SUCCESS ,time 3.189517021179199[sec]
+23:14:03 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:14:03 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:14:03 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:14:03 FINISH SELL LOGIC : status SUCCESS ,time 3.2001657485961914[sec]
+23:14:03 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:14:03 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:14:53 DIVIDE: conter' 2
+23:14:53 reqId 1: added to the reqId list
+23:14:53 account:DU8919527 key:CashBalance value:1007565.8806 currency:USD account update
+23:14:53 account:DU8919527 key:TotalCashBalance value:1007565.8806 currency:USD account update
+23:14:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.05000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:14:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.8800049 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:40.55 AccountName:DU8919527
+23:14:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.0299988 MarketValue:16564.94 AverageCost:169.1402561 UnrealizedPNL:-10.81 RealizedPNL:-214.04 AccountName:DU8919527
+23:14:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:14:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.25 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:14:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.85998535 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:14:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007565.88, BuyingPower:4030263.52, CashBalance:1007565.8806, NetLiquidation:1027550.72, TotalCashBalance:1007565.8806
+23:14:54 DIVIDE: MSTR,stock net: 16572.524904, new invest:0 ,ratio from start: 0.17
+23:14:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:14:54 DIVIDE: GOOG,stock net: 16570.944203, new invest:0 ,ratio from start: 0.17
+23:14:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:14:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:14:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:14:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:14:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:15:00 reqId 11: added to the reqId list
+23:15:00 reqId 31: added to the reqId list
+23:15:00 reqId 21: added to the reqId list
+23:15:00 reqId 51: added to the reqId list
+23:15:00 reqId 61: added to the reqId list
+23:15:00 reqId 41: added to the reqId list
+23:15:00 reqId: 11 symbol TQQQ ,request mkt data
+23:15:00 reqId: 31 symbol GOOG ,request mkt data
+23:15:00 reqId: 21 symbol TSLA ,request mkt data
+23:15:00 reqId: 51 symbol AAPL ,request mkt data
+23:15:00 reqId: 61 symbol MSTR ,request mkt data
+23:15:00 reqId: 41 symbol NVDA ,request mkt data
+23:15:00 req 11 stock TQQQ request mkt data activate
+23:15:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:15:00 TQQQ, lable LAST_PRICE new val:72.25 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:15:00 req 31 stock GOOG request mkt data activate
+23:15:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:15:00 GOOG, lable LAST_PRICE new val:166.8 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:15:00 req 21 stock TSLA request mkt data activate
+23:15:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:15:00 req 51 stock AAPL request mkt data activate
+23:15:00 TSLA, lable LAST_PRICE new val:261.82 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:15:00 req 61 stock MSTR request mkt data activate
+23:15:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:15:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:15:00 AAPL, lable LAST_PRICE new val:233.04 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:15:00 MSTR, lable LAST_PRICE new val:169.11 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:15:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:15:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:15:00 req 41 stock NVDA request mkt data activate
+23:15:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:15:00 NVDA, lable LAST_PRICE new val:121.52 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:15:00 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:15:00 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:15:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:15:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:15:01 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:15:01 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:15:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:15:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:15:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:15:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:15:53 DIVIDE: conter' 3
+23:15:53 reqId 1: added to the reqId list
+23:15:53 account:DU8919527 key:CashBalance value:1007565.8806 currency:USD account update
+23:15:53 account:DU8919527 key:TotalCashBalance value:1007565.8806 currency:USD account update
+23:15:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.05000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:15:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.8800049 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:40.55 AccountName:DU8919527
+23:15:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.0299988 MarketValue:16564.94 AverageCost:169.1402561 UnrealizedPNL:-10.81 RealizedPNL:-214.04 AccountName:DU8919527
+23:15:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:15:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.25 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:15:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.85998535 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:15:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007565.88, BuyingPower:4030263.52, CashBalance:1007565.8806, NetLiquidation:1027550.72, TotalCashBalance:1007565.8806
+23:15:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:15:54 DIVIDE: MSTR,stock net: 16572.524904, new invest:0 ,ratio from start: 0.17
+23:15:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:15:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:15:54 DIVIDE: GOOG,stock net: 16570.944203, new invest:0 ,ratio from start: 0.17
+23:15:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:15:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:15:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:16:00 reqId 61: added to the reqId list
+23:16:00 reqId 11: added to the reqId list
+23:16:00 reqId 51: added to the reqId list
+23:16:00 reqId 41: added to the reqId list
+23:16:00 reqId 31: added to the reqId list
+23:16:00 reqId 21: added to the reqId list
+23:16:00 reqId: 61 symbol MSTR ,request mkt data
+23:16:00 reqId: 11 symbol TQQQ ,request mkt data
+23:16:00 reqId: 51 symbol AAPL ,request mkt data
+23:16:00 reqId: 41 symbol NVDA ,request mkt data
+23:16:00 reqId: 31 symbol GOOG ,request mkt data
+23:16:00 reqId: 21 symbol TSLA ,request mkt data
+23:16:00 req 61 stock MSTR request mkt data activate
+23:16:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:16:00 MSTR, lable LAST_PRICE new val:169.12 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:16:00 req 11 stock TQQQ request mkt data activate
+23:16:00 req 51 stock AAPL request mkt data activate
+23:16:00 req 41 stock NVDA request mkt data activate
+23:16:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:16:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:16:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:16:00 TQQQ, lable LAST_PRICE new val:72.28 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:16:00 AAPL, lable LAST_PRICE new val:233.07 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:16:00 NVDA, lable LAST_PRICE new val:121.53 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:16:00 req 31 stock GOOG request mkt data activate
+23:16:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:16:00 GOOG, lable LAST_PRICE new val:167.19 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:16:00 LOGIC: try BUY 99 shears for GOOG
+23:16:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:16:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:16:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:16:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:16:00 req 21 stock TSLA request mkt data activate
+23:16:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:16:00 TSLA, lable LAST_PRICE new val:261.85 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:16:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:16:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:16:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:16:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:16:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:16:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:16:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:16:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:16:02 reqId 31: added to the reqId list
+23:16:02 reqId: 31 symbol GOOG ,request mkt data
+23:16:02 req 31 stock GOOG request mkt data activate
+23:16:02 reqId:712 ,symbol:GOOG ,action:BUY ,amount:99 ,last price:167.19 ,ordLimitPr: 166.86 ,ASK: 166.79 ,place BUY order
+23:16:02 Order ID=712 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:16:02 Order ID=712 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:16:02 Order ID=712 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.79, Last Fill Price=166.79, Client ID=1, Why Held=
+23:16:02 ordId 712 removed, stock GOOG action BUY filled 99 in avg price 166.79 and wanted price was 167.19
+23:16:02 Order ID=712 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.79, Last Fill Price=166.79, Client ID=1, Why Held=
+23:16:02 ordId: 712, GOOG execDetails: BOT of 99 in price of 166.79 with commission of 1.005148 .[USD]
+23:16:03 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:16:03 FINISH BUY LOGIC : status SUCCESS ,time 3.2036941051483154[sec]
+23:16:03 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:16:03 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:16:53 DIVIDE: conter' 4
+23:16:53 reqId 1: added to the reqId list
+23:16:53 account:DU8919527 key:CashBalance value:991052.6655 currency:USD account update
+23:16:53 account:DU8919527 key:TotalCashBalance value:991052.6655 currency:USD account update
+23:16:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.08000185 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:16:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:99.0 MarketPrice:166.7899933 MarketValue:16512.21 AverageCost:166.800153 UnrealizedPNL:-1.01 RealizedPNL:40.55 AccountName:DU8919527
+23:16:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.0299988 MarketValue:16564.94 AverageCost:169.1402561 UnrealizedPNL:-10.81 RealizedPNL:-214.04 AccountName:DU8919527
+23:16:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.5299988 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:16:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:16:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.80999755 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:16:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1002115.85, BuyingPower:4008463.38, CashBalance:991052.6655, NetLiquidation:1027549.71, TotalCashBalance:991052.6655
+23:16:54 DIVIDE: MSTR,stock net: 16572.524904, new invest:0 ,ratio from start: 0.17
+23:16:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:16:54 DIVIDE: GOOG,stock net: 16569.939055, new invest:0 ,ratio from start: 0.17
+23:16:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:16:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:16:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:16:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:16:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:17:00 reqId 61: added to the reqId list
+23:17:00 reqId 41: added to the reqId list
+23:17:00 reqId 31: added to the reqId list
+23:17:00 reqId 11: added to the reqId list
+23:17:00 reqId 51: added to the reqId list
+23:17:00 reqId 21: added to the reqId list
+23:17:00 reqId: 61 symbol MSTR ,request mkt data
+23:17:00 reqId: 41 symbol NVDA ,request mkt data
+23:17:00 reqId: 31 symbol GOOG ,request mkt data
+23:17:00 reqId: 11 symbol TQQQ ,request mkt data
+23:17:00 reqId: 51 symbol AAPL ,request mkt data
+23:17:00 reqId: 21 symbol TSLA ,request mkt data
+23:17:00 req 61 stock MSTR request mkt data activate
+23:17:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:17:00 MSTR, lable LAST_PRICE new val:169.6 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:17:00 req 41 stock NVDA request mkt data activate
+23:17:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:17:00 NVDA, lable LAST_PRICE new val:121.52 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:17:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:17:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:17:00 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:17:00 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:17:01 req 31 stock GOOG request mkt data activate
+23:17:01 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:17:01 GOOG, lable LAST_PRICE new val:166.76 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:17:01 LOGIC: try SELL 99.0 shears for GOOG
+23:17:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:17:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:17:01 req 51 stock AAPL request mkt data activate
+23:17:01 req 11 stock TQQQ request mkt data activate
+23:17:01 req 21 stock TSLA request mkt data activate
+23:17:01 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:17:01 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:17:01 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:17:01 AAPL, lable LAST_PRICE new val:233.12 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:17:01 TQQQ, lable LAST_PRICE new val:72.26 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:17:01 TSLA, lable LAST_PRICE new val:261.8 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:17:01 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:17:01 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:17:02 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:17:02 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:17:02 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:17:02 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:17:03 reqId 31: added to the reqId list
+23:17:03 reqId: 31 symbol GOOG ,request mkt data
+23:17:03 req 31 stock GOOG request mkt data activate
+23:17:03 reqId:713 ,symbol:GOOG ,action:SELL ,amount:99.0 ,last price:166.76 ,ordLimitPr: 166.63 ,BID: 166.7 ,place SELL order
+23:17:04 Order ID=713 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:17:04 Order ID=713 Status Update: Status=PreSubmitted, Filled=0, Remaining=99, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:17:04 Order ID=713 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.7, Last Fill Price=166.7, Client ID=1, Why Held=
+23:17:04 ordId 713 removed, stock GOOG action SELL filled 99 in avg price 166.7 and wanted price was 166.76
+23:17:04 Order ID=713 Status Update: Status=Filled, Filled=99, Remaining=0, Avg Fill Price=166.7, Last Fill Price=166.7, Client ID=1, Why Held=
+23:17:04 ordId: 713, GOOG execDetails: SLD of 99 in price of 166.7 with commission of 1.480374 .[USD]
+23:17:04 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:17:04 FINISH SELL LOGIC : status SUCCESS ,time 3.1953012943267822[sec]
+23:17:04 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:17:04 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:17:53 DIVIDE: conter' 5
+23:17:53 reqId 1: added to the reqId list
+23:17:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:17:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:17:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.1199951 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:17:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.7899933 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:17:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.05000305 MarketValue:16566.9 AverageCost:169.1402561 UnrealizedPNL:-8.84 RealizedPNL:-214.04 AccountName:DU8919527
+23:17:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:17:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:17:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.76000975 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:17:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030217.94, CashBalance:1007554.4851, NetLiquidation:1027541.29, TotalCashBalance:1007554.4851
+23:17:54 DIVIDE: MSTR,stock net: 16574.484904000004, new invest:0 ,ratio from start: 0.17
+23:17:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:17:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:17:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:17:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:17:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:17:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:17:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:18:00 reqId 61: added to the reqId list
+23:18:00 reqId 41: added to the reqId list
+23:18:00 reqId 51: added to the reqId list
+23:18:00 reqId 21: added to the reqId list
+23:18:00 reqId 31: added to the reqId list
+23:18:00 reqId 11: added to the reqId list
+23:18:00 reqId: 61 symbol MSTR ,request mkt data
+23:18:00 reqId: 41 symbol NVDA ,request mkt data
+23:18:00 reqId: 51 symbol AAPL ,request mkt data
+23:18:00 reqId: 21 symbol TSLA ,request mkt data
+23:18:00 reqId: 31 symbol GOOG ,request mkt data
+23:18:00 reqId: 11 symbol TQQQ ,request mkt data
+23:18:00 req 61 stock MSTR request mkt data activate
+23:18:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:18:00 MSTR, lable LAST_PRICE new val:169.3 ,the limit sets to 169.0 the next will be 169.84499999999997
+23:18:00 req 41 stock NVDA request mkt data activate
+23:18:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:18:00 NVDA, lable LAST_PRICE new val:121.52 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:18:00 req 51 stock AAPL request mkt data activate
+23:18:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:18:00 AAPL, lable LAST_PRICE new val:233.05 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:18:00 req 21 stock TSLA request mkt data activate
+23:18:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:18:00 TSLA, lable LAST_PRICE new val:261.87 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:18:00 req 31 stock GOOG request mkt data activate
+23:18:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:18:00 GOOG, lable LAST_PRICE new val:166.76 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:18:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:18:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:18:00 req 11 stock TQQQ request mkt data activate
+23:18:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:18:00 TQQQ, lable LAST_PRICE new val:72.26 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:18:00 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:18:00 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:18:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:18:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:18:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:18:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:18:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:18:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:18:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:18:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:18:53 DIVIDE: conter' 6
+23:18:53 reqId 1: added to the reqId list
+23:18:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:18:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:18:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.02000425 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:18:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.7899933 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:18:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.22999575 MarketValue:16584.54 AverageCost:169.1402561 UnrealizedPNL:8.79 RealizedPNL:-214.04 AccountName:DU8919527
+23:18:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.48000335 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:18:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.23000335 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:18:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.83999635 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:18:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030217.94, CashBalance:1007554.4851, NetLiquidation:1027558.92, TotalCashBalance:1007554.4851
+23:18:54 DIVIDE: MSTR,stock net: 16592.124904, new invest:0 ,ratio from start: 0.17
+23:18:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:18:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:18:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:18:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:18:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:18:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:18:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:19:00 reqId 31: added to the reqId list
+23:19:00 reqId 21: added to the reqId list
+23:19:00 reqId 61: added to the reqId list
+23:19:00 reqId 41: added to the reqId list
+23:19:00 reqId 11: added to the reqId list
+23:19:00 reqId 51: added to the reqId list
+23:19:00 reqId: 31 symbol GOOG ,request mkt data
+23:19:00 reqId: 21 symbol TSLA ,request mkt data
+23:19:00 reqId: 61 symbol MSTR ,request mkt data
+23:19:00 reqId: 41 symbol NVDA ,request mkt data
+23:19:00 reqId: 11 symbol TQQQ ,request mkt data
+23:19:00 reqId: 51 symbol AAPL ,request mkt data
+23:19:00 req 31 stock GOOG request mkt data activate
+23:19:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:19:00 GOOG, lable LAST_PRICE new val:166.7 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:19:00 req 21 stock TSLA request mkt data activate
+23:19:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:19:00 TSLA, lable LAST_PRICE new val:261.75 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:19:00 req 61 stock MSTR request mkt data activate
+23:19:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:19:00 req 41 stock NVDA request mkt data activate
+23:19:00 MSTR, lable LAST_PRICE new val:169.3 ,the limit sets to 169.16899999999998 the next will be 170.01484499999995
+23:19:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:19:00 NVDA, lable LAST_PRICE new val:121.45 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:19:00 req 11 stock TQQQ request mkt data activate
+23:19:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:19:00 TQQQ, lable LAST_PRICE new val:72.22 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:19:00 req 51 stock AAPL request mkt data activate
+23:19:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:19:00 AAPL, lable LAST_PRICE new val:233.0 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:19:00 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:19:00 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:19:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:19:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:19:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:19:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:19:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:19:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:19:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:19:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:19:01 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:19:01 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:19:53 DIVIDE: conter' 7
+23:19:53 reqId 1: added to the reqId list
+23:19:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:19:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:19:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.02000425 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:19:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.7899933 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:19:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.22999575 MarketValue:16584.54 AverageCost:169.1402561 UnrealizedPNL:8.79 RealizedPNL:-214.04 AccountName:DU8919527
+23:19:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.48000335 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:19:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.23000335 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:19:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.83999635 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:19:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030217.94, CashBalance:1007554.4851, NetLiquidation:1027558.92, TotalCashBalance:1007554.4851
+23:19:54 DIVIDE: MSTR,stock net: 16592.124904, new invest:0 ,ratio from start: 0.17
+23:19:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:19:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:19:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:19:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:19:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:19:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:19:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:20:00 reqId 21: added to the reqId list
+23:20:00 reqId 51: added to the reqId list
+23:20:00 reqId 61: added to the reqId list
+23:20:00 reqId 11: added to the reqId list
+23:20:00 reqId 31: added to the reqId list
+23:20:00 reqId 41: added to the reqId list
+23:20:00 reqId: 21 symbol TSLA ,request mkt data
+23:20:00 reqId: 51 symbol AAPL ,request mkt data
+23:20:00 reqId: 61 symbol MSTR ,request mkt data
+23:20:00 reqId: 11 symbol TQQQ ,request mkt data
+23:20:00 reqId: 31 symbol GOOG ,request mkt data
+23:20:00 reqId: 41 symbol NVDA ,request mkt data
+23:20:00 req 21 stock TSLA request mkt data activate
+23:20:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:20:00 TSLA, lable LAST_PRICE new val:261.75 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:20:00 req 51 stock AAPL request mkt data activate
+23:20:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:20:00 req 61 stock MSTR request mkt data activate
+23:20:00 AAPL, lable LAST_PRICE new val:233.0 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:20:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:20:00 req 11 stock TQQQ request mkt data activate
+23:20:00 MSTR, lable LAST_PRICE new val:169.3 ,the limit sets to 169.16899999999998 the next will be 170.01484499999995
+23:20:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:20:00 TQQQ, lable LAST_PRICE new val:72.26 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:20:00 req 31 stock GOOG request mkt data activate
+23:20:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:20:00 GOOG, lable LAST_PRICE new val:166.89 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:20:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:20:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:20:00 req 41 stock NVDA request mkt data activate
+23:20:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:20:00 NVDA, lable LAST_PRICE new val:121.5 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:20:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:20:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:20:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:20:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:20:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:20:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:20:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:20:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:20:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:20:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:20:23 req_id: -1 Error 2108: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+23:20:24 req_id: -1 Error 2108: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+23:20:25 req_id: -1 Error 2104: Market data farm connection is OK:usfarm.nj
+23:20:53 DIVIDE: conter' 8
+23:20:53 reqId 1: added to the reqId list
+23:20:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:20:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:20:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.019989 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:20:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.83999635 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:20:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.30000305 MarketValue:16591.4 AverageCost:169.1402561 UnrealizedPNL:15.66 RealizedPNL:-214.04 AccountName:DU8919527
+23:20:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.48999785 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:20:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.2799988 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:20:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.730011 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:20:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030190.50, CashBalance:1007554.4851, NetLiquidation:1027565.79, TotalCashBalance:1007554.4851
+23:20:54 DIVIDE: MSTR,stock net: 16598.984904000004, new invest:0 ,ratio from start: 0.17
+23:20:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:20:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:20:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:20:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:20:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:20:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:20:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:21:00 reqId 41: added to the reqId list
+23:21:00 reqId 11: added to the reqId list
+23:21:00 reqId 31: added to the reqId list
+23:21:00 reqId 61: added to the reqId list
+23:21:00 reqId 21: added to the reqId list
+23:21:00 reqId 51: added to the reqId list
+23:21:00 reqId: 41 symbol NVDA ,request mkt data
+23:21:00 reqId: 11 symbol TQQQ ,request mkt data
+23:21:00 reqId: 31 symbol GOOG ,request mkt data
+23:21:00 reqId: 61 symbol MSTR ,request mkt data
+23:21:00 reqId: 21 symbol TSLA ,request mkt data
+23:21:00 reqId: 51 symbol AAPL ,request mkt data
+23:21:00 req 61 stock MSTR request mkt data activate
+23:21:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:21:00 MSTR, lable LAST_PRICE new val:169.49 ,the limit sets to 169.16899999999998 the next will be 170.01484499999995
+23:21:00 req 41 stock NVDA request mkt data activate
+23:21:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:21:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:21:00 req 11 stock TQQQ request mkt data activate
+23:21:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:21:00 TQQQ, lable LAST_PRICE new val:72.28 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:21:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:21:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:21:00 req 31 stock GOOG request mkt data activate
+23:21:00 req 21 stock TSLA request mkt data activate
+23:21:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:21:00 TSLA, lable LAST_PRICE new val:261.65 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:21:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:21:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:21:00 req 51 stock AAPL request mkt data activate
+23:21:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:21:00 AAPL, lable LAST_PRICE new val:233.0 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:21:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:21:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:21:01 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:21:01 NVDA, lable LAST_PRICE new val:121.46 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:21:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:21:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:21:01 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:21:01 GOOG, lable LAST_PRICE new val:166.81 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:21:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:21:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:21:53 DIVIDE: conter' 9
+23:21:53 reqId 1: added to the reqId list
+23:21:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:21:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:21:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.019989 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:21:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:21:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.30000305 MarketValue:16591.4 AverageCost:169.1402561 UnrealizedPNL:15.66 RealizedPNL:-214.04 AccountName:DU8919527
+23:21:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.44999695 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:21:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:21:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.7000122 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:21:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030190.50, CashBalance:1007554.4851, NetLiquidation:1027565.79, TotalCashBalance:1007554.4851
+23:21:54 DIVIDE: MSTR,stock net: 16598.984904000004, new invest:0 ,ratio from start: 0.17
+23:21:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:21:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:21:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:21:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:21:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:21:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:21:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:22:00 reqId 61: added to the reqId list
+23:22:00 reqId 41: added to the reqId list
+23:22:00 reqId 51: added to the reqId list
+23:22:00 reqId 21: added to the reqId list
+23:22:00 reqId 31: added to the reqId list
+23:22:00 reqId 11: added to the reqId list
+23:22:00 reqId: 61 symbol MSTR ,request mkt data
+23:22:00 reqId: 41 symbol NVDA ,request mkt data
+23:22:00 reqId: 51 symbol AAPL ,request mkt data
+23:22:00 reqId: 21 symbol TSLA ,request mkt data
+23:22:00 reqId: 31 symbol GOOG ,request mkt data
+23:22:00 reqId: 11 symbol TQQQ ,request mkt data
+23:22:00 req 61 stock MSTR request mkt data activate
+23:22:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:22:00 MSTR, lable LAST_PRICE new val:169.5 ,the limit sets to 169.16899999999998 the next will be 170.01484499999995
+23:22:00 req 41 stock NVDA request mkt data activate
+23:22:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:22:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:22:00 req 51 stock AAPL request mkt data activate
+23:22:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:22:00 AAPL, lable LAST_PRICE new val:233.01 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:22:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:22:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:22:01 req 21 stock TSLA request mkt data activate
+23:22:01 req 31 stock GOOG request mkt data activate
+23:22:01 req 11 stock TQQQ request mkt data activate
+23:22:01 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:22:01 NVDA, lable LAST_PRICE new val:121.47 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:22:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:22:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:22:02 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:22:02 TSLA, lable LAST_PRICE new val:261.68 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:22:02 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:22:02 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:22:02 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:22:02 GOOG, lable LAST_PRICE new val:166.81 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:22:02 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:22:02 TQQQ, lable LAST_PRICE new val:72.28 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:22:02 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:22:02 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:22:02 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:22:02 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:22:53 DIVIDE: conter' 10
+23:22:53 reqId 1: added to the reqId list
+23:22:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:22:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:22:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.019989 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:22:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:22:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.30000305 MarketValue:16591.4 AverageCost:169.1402561 UnrealizedPNL:15.66 RealizedPNL:-214.04 AccountName:DU8919527
+23:22:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.44999695 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:22:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.26999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:22:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.7000122 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:22:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030190.50, CashBalance:1007554.4851, NetLiquidation:1027565.79, TotalCashBalance:1007554.4851
+23:22:54 DIVIDE: MSTR,stock net: 16598.984904000004, new invest:0 ,ratio from start: 0.17
+23:22:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:22:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:22:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:22:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:22:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:22:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:22:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:23:00 reqId 31: added to the reqId list
+23:23:00 reqId 61: added to the reqId list
+23:23:00 reqId 21: added to the reqId list
+23:23:00 reqId 41: added to the reqId list
+23:23:00 reqId 11: added to the reqId list
+23:23:00 reqId 51: added to the reqId list
+23:23:00 reqId: 31 symbol GOOG ,request mkt data
+23:23:00 reqId: 61 symbol MSTR ,request mkt data
+23:23:00 reqId: 21 symbol TSLA ,request mkt data
+23:23:00 reqId: 41 symbol NVDA ,request mkt data
+23:23:00 reqId: 11 symbol TQQQ ,request mkt data
+23:23:00 reqId: 51 symbol AAPL ,request mkt data
+23:23:00 req_id: -1 Error 2108: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+23:23:00 req_id: -1 Error 2108: Market data farm connection is inactive but should be available upon demand.usfarm.nj
+23:23:00 req 31 stock GOOG request mkt data activate
+23:23:00 req 61 stock MSTR request mkt data activate
+23:23:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:23:00 MSTR, lable LAST_PRICE new val:169.51 ,the limit sets to 169.338 the next will be 170.18469
+23:23:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:23:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:23:00 req 41 stock NVDA request mkt data activate
+23:23:00 req 21 stock TSLA request mkt data activate
+23:23:00 req 11 stock TQQQ request mkt data activate
+23:23:00 req 51 stock AAPL request mkt data activate
+23:23:01 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:23:01 GOOG, lable LAST_PRICE new val:166.81 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:23:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:23:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:23:01 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:23:01 NVDA, lable LAST_PRICE new val:121.53 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:23:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:23:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:23:01 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:23:01 TSLA, lable LAST_PRICE new val:261.7 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:23:01 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:23:01 TQQQ, lable LAST_PRICE new val:72.32 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:23:01 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:23:01 AAPL, lable LAST_PRICE new val:233.02 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:23:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:23:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:23:02 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:23:02 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:23:02 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:23:02 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:23:53 DIVIDE: conter' 11
+23:23:53 reqId 1: added to the reqId list
+23:23:53 account:DU8919527 key:CashBalance value:1007554.4851 currency:USD account update
+23:23:53 account:DU8919527 key:TotalCashBalance value:1007554.4851 currency:USD account update
+23:23:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.08000185 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:23:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:23:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.5099945 MarketValue:16611.98 AverageCost:169.1402561 UnrealizedPNL:36.23 RealizedPNL:-214.04 AccountName:DU8919527
+23:23:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:23:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.37000275 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-85.78 AccountName:DU8919527
+23:23:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.73999025 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:23:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007554.49, BuyingPower:4030108.18, CashBalance:1007554.4851, NetLiquidation:1027586.36, TotalCashBalance:1007554.4851
+23:23:54 DIVIDE: MSTR,stock net: 16619.564904000003, new invest:0 ,ratio from start: 0.17
+23:23:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:23:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:23:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:23:54 DIVIDE: TQQQ,stock net: 16575.948212000003, new invest:0 ,ratio from start: 0.17
+23:23:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:23:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:23:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:24:00 reqId 61: added to the reqId list
+23:24:00 reqId 41: added to the reqId list
+23:24:00 reqId 31: added to the reqId list
+23:24:00 reqId 51: added to the reqId list
+23:24:00 reqId 11: added to the reqId list
+23:24:00 reqId 21: added to the reqId list
+23:24:00 reqId: 61 symbol MSTR ,request mkt data
+23:24:00 reqId: 41 symbol NVDA ,request mkt data
+23:24:00 reqId: 31 symbol GOOG ,request mkt data
+23:24:00 reqId: 51 symbol AAPL ,request mkt data
+23:24:00 reqId: 11 symbol TQQQ ,request mkt data
+23:24:00 reqId: 21 symbol TSLA ,request mkt data
+23:24:00 req 61 stock MSTR request mkt data activate
+23:24:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:24:00 MSTR, lable LAST_PRICE new val:169.55 ,the limit sets to 169.338 the next will be 170.18469
+23:24:00 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:24:00 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:24:00 req 41 stock NVDA request mkt data activate
+23:24:00 req 31 stock GOOG request mkt data activate
+23:24:00 req 51 stock AAPL request mkt data activate
+23:24:00 req 11 stock TQQQ request mkt data activate
+23:24:01 req 21 stock TSLA request mkt data activate
+23:24:01 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:24:01 NVDA, lable LAST_PRICE new val:121.51 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:24:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:24:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:24:01 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:24:01 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:24:01 GOOG, lable LAST_PRICE new val:166.8 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:24:01 AAPL, lable LAST_PRICE new val:233.1 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:24:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:24:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:24:01 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:24:01 TQQQ, lable LAST_PRICE new val:72.38 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:24:01 LOGIC: try BUY 228 shears for TQQQ
+23:24:02 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:24:02 TSLA, lable LAST_PRICE new val:261.71 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:24:02 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:24:02 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:24:02 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:24:02 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:24:02 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:24:02 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:24:03 reqId 11: added to the reqId list
+23:24:03 reqId: 11 symbol TQQQ ,request mkt data
+23:24:04 req 11 stock TQQQ request mkt data activate
+23:24:05 reqId:714 ,symbol:TQQQ ,action:BUY ,amount:228 ,last price:72.37 ,ordLimitPr: 72.41 ,ASK: 72.38 ,place BUY order
+23:24:05 Order ID=714 Status Update: Status=PreSubmitted, Filled=0, Remaining=228, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:24:05 Order ID=714 Status Update: Status=PreSubmitted, Filled=0, Remaining=228, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:24:05 Order ID=714 Status Update: Status=PreSubmitted, Filled=200, Remaining=28, Avg Fill Price=72.38, Last Fill Price=72.38, Client ID=1, Why Held=
+23:24:05 Order ID=714 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.38, Last Fill Price=72.38, Client ID=1, Why Held=
+23:24:05 ordId 714 removed, stock TQQQ action BUY filled 228 in avg price 72.38 and wanted price was 72.38
+23:24:05 Order ID=714 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.38, Last Fill Price=72.38, Client ID=1, Why Held=
+23:24:05 ordId: 714, TQQQ execDetails: BOT of 200 in price of 72.38 with commission of 1.0104 .[USD]
+23:24:05 Order ID=714 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.38, Last Fill Price=72.38, Client ID=1, Why Held=
+23:24:05 ordId: 714, TQQQ execDetails: BOT of 28 in price of 72.38 with commission of 0.141456 .[USD]
+23:24:06 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:24:06 FINISH BUY LOGIC : status SUCCESS ,time 4.385584831237793[sec]
+23:24:06 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:24:06 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:24:48 req_id: -1 Error 2104: Market data farm connection is OK:usfarm.nj
+23:24:53 DIVIDE: conter' 12
+23:24:53 reqId 1: added to the reqId list
+23:24:53 account:DU8919527 key:CashBalance value:991050.6933 currency:USD account update
+23:24:53 account:DU8919527 key:TotalCashBalance value:991050.6933 currency:USD account update
+23:24:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.08000185 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:24:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:24:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.5099945 MarketValue:16611.98 AverageCost:169.1402561 UnrealizedPNL:36.23 RealizedPNL:-214.04 AccountName:DU8919527
+23:24:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:24:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:228.0 MarketPrice:72.37000275 MarketValue:16500.36 AverageCost:72.385052 UnrealizedPNL:-3.43 RealizedPNL:-85.78 AccountName:DU8919527
+23:24:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.730011 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:24:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007551.05, BuyingPower:4030108.18, CashBalance:991050.6933, NetLiquidation:1027582.93, TotalCashBalance:991050.6933
+23:24:54 DIVIDE: MSTR,stock net: 16619.564904000003, new invest:0 ,ratio from start: 0.17
+23:24:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:24:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:24:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:24:54 DIVIDE: TQQQ,stock net: 16572.516356000004, new invest:0 ,ratio from start: 0.17
+23:24:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:24:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:24:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:25:00 reqId 11: added to the reqId list
+23:25:00 reqId 51: added to the reqId list
+23:25:00 reqId 31: added to the reqId list
+23:25:00 reqId 61: added to the reqId list
+23:25:00 reqId 21: added to the reqId list
+23:25:00 reqId 41: added to the reqId list
+23:25:00 reqId: 11 symbol TQQQ ,request mkt data
+23:25:00 reqId: 51 symbol AAPL ,request mkt data
+23:25:00 reqId: 31 symbol GOOG ,request mkt data
+23:25:00 reqId: 61 symbol MSTR ,request mkt data
+23:25:00 reqId: 21 symbol TSLA ,request mkt data
+23:25:00 reqId: 41 symbol NVDA ,request mkt data
+23:25:00 req 11 stock TQQQ request mkt data activate
+23:25:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:25:00 TQQQ, lable LAST_PRICE new val:72.38 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:25:00 req 51 stock AAPL request mkt data activate
+23:25:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:25:00 AAPL, lable LAST_PRICE new val:233.1 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:25:00 req 31 stock GOOG request mkt data activate
+23:25:00 req 61 stock MSTR request mkt data activate
+23:25:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:25:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:25:00 GOOG, lable LAST_PRICE new val:166.78 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:25:00 MSTR, lable LAST_PRICE new val:169.54 ,the limit sets to 169.50699999999998 the next will be 170.35453499999997
+23:25:00 req 21 stock TSLA request mkt data activate
+23:25:00 req 41 stock NVDA request mkt data activate
+23:25:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:25:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:25:00 TSLA, lable LAST_PRICE new val:261.7 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:25:00 NVDA, lable LAST_PRICE new val:121.52 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:25:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:25:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:25:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:25:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:25:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:25:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:25:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:25:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:25:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:25:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:25:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:25:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:25:53 DIVIDE: conter' 13
+23:25:53 reqId 1: added to the reqId list
+23:25:53 account:DU8919527 key:CashBalance value:991050.6933 currency:USD account update
+23:25:53 account:DU8919527 key:TotalCashBalance value:991050.6933 currency:USD account update
+23:25:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.08000185 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:25:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:25:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:98.0 MarketPrice:169.5099945 MarketValue:16611.98 AverageCost:169.1402561 UnrealizedPNL:36.23 RealizedPNL:-214.04 AccountName:DU8919527
+23:25:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.51999665 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:25:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:228.0 MarketPrice:72.37000275 MarketValue:16500.36 AverageCost:72.385052 UnrealizedPNL:-3.43 RealizedPNL:-85.78 AccountName:DU8919527
+23:25:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.730011 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:25:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1007551.05, BuyingPower:4030108.18, CashBalance:991050.6933, NetLiquidation:1027582.93, TotalCashBalance:991050.6933
+23:25:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:25:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:25:54 DIVIDE: MSTR,stock net: 16619.564904000003, new invest:0 ,ratio from start: 0.17
+23:25:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:25:54 DIVIDE: TQQQ,stock net: 16572.516356000004, new invest:0 ,ratio from start: 0.17
+23:25:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:25:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:25:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:26:00 reqId 21: added to the reqId list
+23:26:00 reqId 31: added to the reqId list
+23:26:00 reqId 61: added to the reqId list
+23:26:00 reqId 11: added to the reqId list
+23:26:00 reqId 51: added to the reqId list
+23:26:00 reqId 41: added to the reqId list
+23:26:00 reqId: 21 symbol TSLA ,request mkt data
+23:26:00 reqId: 31 symbol GOOG ,request mkt data
+23:26:00 reqId: 61 symbol MSTR ,request mkt data
+23:26:00 reqId: 11 symbol TQQQ ,request mkt data
+23:26:00 reqId: 51 symbol AAPL ,request mkt data
+23:26:00 reqId: 41 symbol NVDA ,request mkt data
+23:26:00 req 21 stock TSLA request mkt data activate
+23:26:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:26:00 TSLA, lable LAST_PRICE new val:261.62 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:26:00 req 31 stock GOOG request mkt data activate
+23:26:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:26:00 GOOG, lable LAST_PRICE new val:166.79 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:26:00 req 61 stock MSTR request mkt data activate
+23:26:00 req 11 stock TQQQ request mkt data activate
+23:26:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:26:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:26:00 MSTR, lable LAST_PRICE new val:169.54 ,the limit sets to 169.50699999999998 the next will be 170.35453499999997
+23:26:00 TQQQ, lable LAST_PRICE new val:72.36 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:26:00 LOGIC: try SELL 98.0 shears for MSTR
+23:26:00 LOGIC: try SELL 228.0 shears for TQQQ
+23:26:00 req 51 stock AAPL request mkt data activate
+23:26:00 req 41 stock NVDA request mkt data activate
+23:26:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:26:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:26:00 AAPL, lable LAST_PRICE new val:233.1 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:26:00 NVDA, lable LAST_PRICE new val:121.5 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:26:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:26:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:26:00 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:26:00 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:26:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:26:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:26:01 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:26:01 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:26:01 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:26:01 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:26:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:26:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:26:02 reqId 61: added to the reqId list
+23:26:02 reqId 11: added to the reqId list
+23:26:02 reqId: 61 symbol MSTR ,request mkt data
+23:26:02 reqId: 11 symbol TQQQ ,request mkt data
+23:26:02 req 61 stock MSTR request mkt data activate
+23:26:02 reqId:715 ,symbol:MSTR ,action:SELL ,amount:98.0 ,last price:169.54 ,ordLimitPr: 169.23 ,BID: 169.3 ,place SELL order
+23:26:02 req 11 stock TQQQ request mkt data activate
+23:26:02 reqId:716 ,symbol:TQQQ ,action:SELL ,amount:228.0 ,last price:72.36 ,ordLimitPr: 72.33 ,BID: 72.36 ,place SELL order
+23:26:03 Order ID=715 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:26:03 Order ID=715 Status Update: Status=PreSubmitted, Filled=0, Remaining=98, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:26:03 Order ID=715 Status Update: Status=Filled, Filled=98, Remaining=0, Avg Fill Price=169.3, Last Fill Price=169.3, Client ID=1, Why Held=
+23:26:03 ordId 715 removed, stock MSTR action SELL filled 98 in avg price 169.3 and wanted price was 169.54
+23:26:03 Order ID=715 Status Update: Status=Filled, Filled=98, Remaining=0, Avg Fill Price=169.3, Last Fill Price=169.3, Client ID=1, Why Held=
+23:26:03 ordId: 715, MSTR execDetails: SLD of 98 in price of 169.3 with commission of 1.482605 .[USD]
+23:26:03 Order ID=716 Status Update: Status=PreSubmitted, Filled=0, Remaining=228, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:26:03 Order ID=716 Status Update: Status=PreSubmitted, Filled=0, Remaining=228, Avg Fill Price=0.0, Last Fill Price=0.0, Client ID=1, Why Held=
+23:26:03 Order ID=716 Status Update: Status=PreSubmitted, Filled=200, Remaining=28, Avg Fill Price=72.36, Last Fill Price=72.36, Client ID=1, Why Held=
+23:26:03 Order ID=716 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.36, Last Fill Price=72.36, Client ID=1, Why Held=
+23:26:03 ordId 716 removed, stock TQQQ action SELL filled 228 in avg price 72.36 and wanted price was 72.36
+23:26:03 Order ID=716 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.36, Last Fill Price=72.36, Client ID=1, Why Held=
+23:26:03 ordId: 716, TQQQ execDetails: SLD of 200 in price of 72.36 with commission of 1.445922 .[USD]
+23:26:03 Order ID=716 Status Update: Status=Filled, Filled=228, Remaining=0, Avg Fill Price=72.36, Last Fill Price=72.36, Client ID=1, Why Held=
+23:26:03 ordId: 716, TQQQ execDetails: SLD of 28 in price of 72.36 with commission of 0.202429 .[USD]
+23:26:03 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:26:03 FINISH SELL LOGIC : status SUCCESS ,time 3.1926701068878174[sec]
+23:26:03 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:26:03 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:26:03 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:26:03 FINISH SELL LOGIC : status SUCCESS ,time 3.362413167953491[sec]
+23:26:04 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:26:04 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:26:53 DIVIDE: conter' 14
+23:26:53 reqId 1: added to the reqId list
+23:26:53 account:DU8919527 key:CashBalance value:1024137.0423 currency:USD account update
+23:26:53 account:DU8919527 key:TotalCashBalance value:1024137.0423 currency:USD account update
+23:26:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.0700073 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:26:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:26:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:0.0 MarketPrice:169.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-199.87 AccountName:DU8919527
+23:26:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:26:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.37000275 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-93.14 AccountName:DU8919527
+23:26:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.67001345 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:26:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1024137.04, BuyingPower:4096548.17, CashBalance:1024137.0423, NetLiquidation:1027556.94, TotalCashBalance:1024137.0423
+23:26:54 DIVIDE: MSTR,stock net: 16597.502299000003, new invest:0 ,ratio from start: 0.17
+23:26:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:26:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:26:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:26:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:26:54 DIVIDE: TQQQ,stock net: 16568.588005, new invest:0 ,ratio from start: 0.17
+23:26:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:26:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:27:00 reqId 11: added to the reqId list
+23:27:00 reqId 51: added to the reqId list
+23:27:00 reqId 21: added to the reqId list
+23:27:00 reqId 41: added to the reqId list
+23:27:00 reqId 31: added to the reqId list
+23:27:00 reqId 61: added to the reqId list
+23:27:00 reqId: 11 symbol TQQQ ,request mkt data
+23:27:00 reqId: 51 symbol AAPL ,request mkt data
+23:27:00 reqId: 21 symbol TSLA ,request mkt data
+23:27:00 reqId: 41 symbol NVDA ,request mkt data
+23:27:00 reqId: 31 symbol GOOG ,request mkt data
+23:27:00 reqId: 61 symbol MSTR ,request mkt data
+23:27:00 req 11 stock TQQQ request mkt data activate
+23:27:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:27:00 TQQQ, lable LAST_PRICE new val:72.38 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:27:00 req 51 stock AAPL request mkt data activate
+23:27:00 req 21 stock TSLA request mkt data activate
+23:27:00 req 41 stock NVDA request mkt data activate
+23:27:00 req 31 stock GOOG request mkt data activate
+23:27:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:27:00 AAPL, lable LAST_PRICE new val:233.16 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:27:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:27:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:27:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:27:00 TSLA, lable LAST_PRICE new val:261.71 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:27:00 NVDA, lable LAST_PRICE new val:121.52 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:27:00 GOOG, lable LAST_PRICE new val:166.85 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:27:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:27:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:27:00 req 61 stock MSTR request mkt data activate
+23:27:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:27:00 MSTR, lable LAST_PRICE new val:169.54 ,the limit sets to 169.50699999999998 the next will be 170.35453499999997
+23:27:00 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:27:00 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:27:00 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:27:00 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:27:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:27:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:27:01 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:27:01 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:27:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:27:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:27:53 DIVIDE: conter' 15
+23:27:53 reqId 1: added to the reqId list
+23:27:53 account:DU8919527 key:CashBalance value:1024137.0423 currency:USD account update
+23:27:53 account:DU8919527 key:TotalCashBalance value:1024137.0423 currency:USD account update
+23:27:53 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.0700073 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:27:53 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:27:53 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:0.0 MarketPrice:169.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-199.87 AccountName:DU8919527
+23:27:53 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:27:53 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.37000275 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-93.14 AccountName:DU8919527
+23:27:53 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.67001345 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:27:54 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1024137.04, BuyingPower:4096548.17, CashBalance:1024137.0423, NetLiquidation:1027556.94, TotalCashBalance:1024137.0423
+23:27:54 DIVIDE: MSTR,stock net: 16597.502299000003, new invest:0 ,ratio from start: 0.17
+23:27:54 DIVIDE: AAPL,stock net: 16575.170935000002, new invest:0 ,ratio from start: 0.17
+23:27:54 DIVIDE: TQQQ,stock net: 16568.588005, new invest:0 ,ratio from start: 0.17
+23:27:54 DIVIDE: GOOG,stock net: 16559.548681, new invest:0 ,ratio from start: 0.17
+23:27:54 REMOVE: reqId 1,and canceled account streaming DATA
+23:27:54 DIVIDE: NVDA,stock net: 16575.40391299999, new invest:0 ,ratio from start: 0.17
+23:27:54 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:27:54 DIVIDE: TSLA,stock net: 16566.364438, new invest:0 ,ratio from start: 0.17
+23:27:59 reqId 31: added to the reqId list
+23:27:59 reqId 11: added to the reqId list
+23:27:59 reqId 51: added to the reqId list
+23:27:59 reqId 41: added to the reqId list
+23:27:59 reqId 61: added to the reqId list
+23:27:59 reqId 21: added to the reqId list
+23:27:59 reqId: 31 symbol GOOG ,request mkt data
+23:27:59 reqId: 11 symbol TQQQ ,request mkt data
+23:27:59 reqId: 51 symbol AAPL ,request mkt data
+23:27:59 reqId: 41 symbol NVDA ,request mkt data
+23:27:59 reqId: 61 symbol MSTR ,request mkt data
+23:27:59 reqId: 21 symbol TSLA ,request mkt data
+23:28:00 req 31 stock GOOG request mkt data activate
+23:28:00 TRY CANCEL: reqId31, attempt 0, cancel MktData, symbolGOOG
+23:28:00 GOOG, lable LAST_PRICE new val:166.86 ,the limit sets to 167.08691999999996 the next will be 167.92235459999995
+23:28:00 req 11 stock TQQQ request mkt data activate
+23:28:00 TRY CANCEL: reqId11, attempt 0, cancel MktData, symbolTQQQ
+23:28:00 TQQQ, lable LAST_PRICE new val:72.42 ,the limit sets to 72.34226999999998 the next will be 72.70398134999998
+23:28:00 req 41 stock NVDA request mkt data activate
+23:28:00 req 51 stock AAPL request mkt data activate
+23:28:00 TRY CANCEL: reqId41, attempt 0, cancel MktData, symbolNVDA
+23:28:00 NVDA, lable LAST_PRICE new val:121.53 ,the limit sets to 121.63150999999999 the next will be 122.23966754999998
+23:28:00 TRY CANCEL: reqId51, attempt 0, cancel MktData, symbolAAPL
+23:28:00 AAPL, lable LAST_PRICE new val:233.09 ,the limit sets to 233.28304999999997 the next will be 234.44946524999995
+23:28:00 REMOVE: reqId 1,and canceled stock GOOG streaming DATA(BID,ASK..)
+23:28:00 req_id: 31 Error 300: Can't find EId with tickerId:31
+23:28:00 req 61 stock MSTR request mkt data activate
+23:28:00 TRY CANCEL: reqId61, attempt 0, cancel MktData, symbolMSTR
+23:28:00 MSTR, lable LAST_PRICE new val:169.54 ,the limit sets to 169.50699999999998 the next will be 170.35453499999997
+23:28:00 req 21 stock TSLA request mkt data activate
+23:28:00 TRY CANCEL: reqId21, attempt 0, cancel MktData, symbolTSLA
+23:28:00 TSLA, lable LAST_PRICE new val:261.87 ,the limit sets to 262.26199999999994 the next will be 263.57330999999994
+23:28:00 REMOVE: reqId 1,and canceled stock TQQQ streaming DATA(BID,ASK..)
+23:28:00 req_id: 11 Error 300: Can't find EId with tickerId:11
+23:28:00 DIVIDE: conter' 17
+23:28:00 reqId 1: added to the reqId list
+23:28:01 REMOVE: reqId 1,and canceled stock NVDA streaming DATA(BID,ASK..)
+23:28:01 req_id: 41 Error 300: Can't find EId with tickerId:41
+23:28:01 REMOVE: reqId 1,and canceled stock AAPL streaming DATA(BID,ASK..)
+23:28:01 req_id: 51 Error 300: Can't find EId with tickerId:51
+23:28:01 REMOVE: reqId 1,and canceled stock MSTR streaming DATA(BID,ASK..)
+23:28:01 req_id: 61 Error 300: Can't find EId with tickerId:61
+23:28:01 REMOVE: reqId 1,and canceled stock TSLA streaming DATA(BID,ASK..)
+23:28:01 req_id: 21 Error 300: Can't find EId with tickerId:21
+23:28:01 account:DU8919527 key:CashBalance value:1024137.0423 currency:USD account update
+23:28:01 account:DU8919527 key:TotalCashBalance value:1024137.0423 currency:USD account update
+23:28:01 UpdatePortfolio. Symbol:AAPL SecType:STK Exchange: Position:0.0 MarketPrice:233.0700073 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.55 AccountName:DU8919527
+23:28:01 UpdatePortfolio. Symbol:GOOG SecType:STK Exchange: Position:0.0 MarketPrice:166.80000305 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:29.15 AccountName:DU8919527
+23:28:01 UpdatePortfolio. Symbol:MSTR SecType:STK Exchange: Position:0.0 MarketPrice:169.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-199.87 AccountName:DU8919527
+23:28:01 UpdatePortfolio. Symbol:NVDA SecType:STK Exchange: Position:0.0 MarketPrice:121.5 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:116.11 AccountName:DU8919527
+23:28:01 UpdatePortfolio. Symbol:TQQQ SecType:STK Exchange: Position:0.0 MarketPrice:72.37000275 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:-93.14 AccountName:DU8919527
+23:28:01 UpdatePortfolio. Symbol:TSLA SecType:STK Exchange: Position:0.0 MarketPrice:261.67001345 MarketValue:0.0 AverageCost:0.0 UnrealizedPNL:0.0 RealizedPNL:32.52 AccountName:DU8919527
+23:28:02 reqid :UPDATE ACCOUNT ,finished status:SUCCESS ACCOUNT, AvailableFunds:1024137.04, BuyingPower:4096548.17, CashBalance:1024137.0423, NetLiquidation:1027556.94, TotalCashBalance:1024137.0423
+23:28:02 DIVIDE: MSTR,stock net: 0.0, new invest:0,ratio from start: 0.0
+23:28:02 DIVIDE: TQQQ,stock net: 0.0, new invest:0,ratio from start: 0.0
+23:28:02 DIVIDE: AAPL,stock net: 3162.08, new invest:0,ratio from start: 0.03
+23:28:02 DIVIDE: GOOG,stock net: 27427.75, new invest:0,ratio from start: 0.27
+23:28:02 DIVIDE: NVDA,stock net: 46924.18, new invest:0,ratio from start: 0.47
+23:28:02 DIVIDE: TSLA,stock net: 21928.56827099999, new invest:0,ratio from start: 0.22
+23:28:02 REMOVE: reqId 1,and canceled account streaming DATA
+23:28:02 req_id: -1 Error 2100: API client has been unsubscribed from account data.
+23:28:03 disconnect Client
